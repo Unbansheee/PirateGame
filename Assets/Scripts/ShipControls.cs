@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,6 +12,15 @@ public class KeyValuePair {
     public int Gear;
     public float Speed;
 }
+
+enum Direction
+{
+    LEFT,
+    RIGHT,
+    FORWARD,
+    BACK
+}
+
 public class ShipControls : MonoBehaviour
 {
     [SerializeField]
@@ -21,14 +31,41 @@ public class ShipControls : MonoBehaviour
     public List<KeyValuePair> gears = new List<KeyValuePair>();
     private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
     
+    [SerializeField]
+    private Direction _mouseDirection;
     
     IEnumerator Lerp(float begin, float end, float time){
         float n = 0;  // lerped value
         for(float f = 0; f <= time; f += Time.deltaTime) {
             n = Mathf.Lerp(begin, end, f / time); // passing in the start + end values, and using our elapsed time 'f' as a portion of the total time 'x'
-            // use 'n' .. ?
             speed = n;
             yield return n;
+        }
+    }
+
+
+    void UpdateMouseDirection()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit);
+        var mousePosWorld = hit.point;
+        var mousePosRelative = transform.InverseTransformPoint(mousePosWorld);
+        if (mousePosRelative.x < transform.localPosition.x && math.abs(mousePosRelative.y) < math.abs(mousePosRelative.x))
+        {
+            _mouseDirection = Direction.LEFT;
+        }
+        else if (mousePosRelative.x > transform.localPosition.x && math.abs(mousePosRelative.y) < math.abs(mousePosRelative.x))
+        {
+            _mouseDirection = Direction.RIGHT;
+        }
+        else if (mousePosRelative.y > transform.localPosition.y)
+        {
+            _mouseDirection = Direction.FORWARD;
+        }
+        else if (mousePosRelative.y < transform.localPosition.y)
+        {
+            _mouseDirection = Direction.BACK;
         }
     }
     
@@ -47,6 +84,7 @@ public class ShipControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateMouseDirection();
         if(Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
@@ -68,7 +106,10 @@ public class ShipControls : MonoBehaviour
             StartCoroutine(Lerp(speed, gearSpeeds[_currentGear], 2));
         }
 
-        var transform1 = transform;
-        transform.position = transform1.position + (transform1.right * (speed * Time.deltaTime));
+        var shipPos = transform;
+        transform.position = shipPos.position + (shipPos.up * (speed * Time.deltaTime));
+        
+        
     }
 }
+
