@@ -55,6 +55,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
+    - _NormalIntensity: 0.5
+    - _Scale: 0.01
     - _WaveSpeed: 0.1
     m_Colors:
     - _Color: {r: 0.08235294, g: 0.23137255, b: 0.48235294, a: 0}
