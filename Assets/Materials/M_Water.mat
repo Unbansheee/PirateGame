@@ -47,11 +47,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DistortionIntensity: 0.57
+    - _DistortionScale: 2.91
+    - _DistortionSpeed: 1
+    - _EvolutionSpeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 0.25
-    - _ScrollSpeed: 0
+    - _Scale: 0.5
+    - _ScrollSpeed: 1
+    - _WaveSharpness: 4.56
     m_Colors:
-    - _BaseColour: {r: 0.14640439, g: 0.51326317, b: 0.8867924, a: 0}
-    - _PeakColour: {r: 0.20392156, g: 0.6755309, b: 0.8862745, a: 0}
+    - _BaseColour: {r: 0.13171947, g: 0.44107014, b: 0.754717, a: 0}
+    - _PanningSpeed: {r: 1, g: 1, b: 0, a: 0}
+    - _PeakColour: {r: 0.23887502, g: 0.5169099, b: 0.8301887, a: 0}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
