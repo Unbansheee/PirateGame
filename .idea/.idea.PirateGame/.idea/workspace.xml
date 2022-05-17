@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac634a30-a18a-4275-ab01-f55e8d35762b" name="Changes" comment="" />
+    <list default="true" id="ac634a30-a18a-4275-ab01-f55e8d35762b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShipControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShipControls.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +73,7 @@
       <workItem from="1652600129887" duration="6241000" />
       <workItem from="1652607293818" duration="2563000" />
       <workItem from="1652671903902" duration="654000" />
+      <workItem from="1652769134241" duration="2382000" />
     </task>
     <servers />
   </component>
