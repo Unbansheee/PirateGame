@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: DefaultNoise
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  normalizeMode: 0
+  normalizeMode: 1
   globalHeightAdjust: 1.37
-  noiseScale: 48.9
-  octaves: 3
-  persistence: 0.268
-  lacunarity: 10
+  noiseScale: 48.86
+  octaves: 5
+  persistence: 0.25
+  lacunarity: 4.7
   seed: 0
   offset: {x: 0, y: 0}
