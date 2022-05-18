@@ -3,10 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="ac634a30-a18a-4275-ab01-f55e8d35762b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Terrain.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/M_Terrain.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShaderWater.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShaderWater.shadergraph.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EndlessTerrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EndlessTerrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Noise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Noise.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerrainDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/CS_ComputeHeight.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/CS_ComputeHeight.compute.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/SG_Terrain.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/SG_Terrain.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/SpriteLitWater.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/SpriteLitWater.shadergraph.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,13 +26,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/NoiseData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/TerrainData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/UpdatableDataEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EndlessTerrain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FalloffGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FollowObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MeshGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Noise.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TerrainDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextureGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/CS_ComputeHeight.compute" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,17 +45,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "rider.run.widget.enabled.cache": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Software\Unity\2021.3.2f1\Editor\Unity.exe" />
@@ -60,10 +75,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27064">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="27064" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -84,6 +99,7 @@
       <workItem from="1652607293818" duration="2563000" />
       <workItem from="1652671903902" duration="654000" />
       <workItem from="1652769134241" duration="24105000" />
+      <workItem from="1652849578625" duration="19204000" />
     </task>
     <servers />
   </component>

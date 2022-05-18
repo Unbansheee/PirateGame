@@ -8,15 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Terrain
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 2a523d2c9fc47ed42877a8d9442d7223, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -109,6 +108,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b6e725ed866c46b48ea11f8847c79810_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -153,6 +156,7 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _AlphaClip: 0
+    - _BaseStartHeights: 0
     - _Blend: 0
     - _BlendOp: 0
     - _BumpScale: 1
@@ -186,11 +190,13 @@ Material:
     - _GlossinessSource: 0
     - _GlossyReflections: 0
     - _HeightTransition: 0
+    - _MaxHeight: 3.84
     - _Metallic: 0
     - _Metallic0: 0
     - _Metallic1: 0
     - _Metallic2: 0
     - _Metallic3: 0
+    - _MinHeight: 0
     - _Mode: 0
     - _NormalIntensity: 0
     - _NumLayersCount: 1
