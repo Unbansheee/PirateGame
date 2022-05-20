@@ -18,15 +18,12 @@ public class TileAutomata : MonoBehaviour
 
     [Range(1, 10)]
     public int numRepetitions;
-
-    private int count = 0;
+    
     private int[,] terrainMap;
     public Vector3Int tmapSize;
 
     public Tilemap topMap;
-    public Tilemap botMap;
     public Tile topTile;
-    public Tile botTile;
 
     private int width;
     private int height;
@@ -55,7 +52,6 @@ public class TileAutomata : MonoBehaviour
                 if (terrainMap[x, y] == 1)
                 {
                     topMap.SetTile(new Vector3Int(-x + width/2, -y + height / 2, 0), topTile);
-                    botMap.SetTile(new Vector3Int(-x + width/2, -y + height / 2, 0), botTile);
                 }
             }
         }
@@ -155,7 +151,6 @@ public class TileAutomata : MonoBehaviour
     public void clearMap(bool complete)
     {
         topMap.ClearAllTiles();
-        botMap.ClearAllTiles();
 
         if (complete)
         {
