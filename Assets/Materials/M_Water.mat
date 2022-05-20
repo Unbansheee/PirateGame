@@ -51,15 +51,14 @@ Material:
     - _DistortionScale: 2.91
     - _DistortionSpeed: 1
     - _EvolutionSpeed: 1
-    - _NormalStrength: 0.12
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 0.37
+    - _Scale: 0.5
     - _ScrollSpeed: 1
-    - _WaveSharpness: 3.53
+    - _WaveSharpness: 4.56
     m_Colors:
-    - _BaseColour: {r: 0.1986917, g: 0.4433962, b: 0.36361584, a: 0}
+    - _BaseColour: {r: 0.13171947, g: 0.44107014, b: 0.754717, a: 0}
     - _PanningSpeed: {r: 1, g: 1, b: 0, a: 0}
-    - _PeakColour: {r: 0.9528302, g: 0.8808831, b: 0.7146226, a: 0}
+    - _PeakColour: {r: 0.23887502, g: 0.5169099, b: 0.8301887, a: 0}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
