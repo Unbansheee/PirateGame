@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 
 [System.Serializable]
@@ -75,6 +76,11 @@ public class Inventory : MonoBehaviour
         this.coins = Mathf.Min(coins, coinsMax);
     }
 
+    public int GetCoins()
+    {
+        return this.coins;
+    }
+
     public void AddCoins(int count)
     {
         SetCoins(coins + count);
@@ -98,20 +104,25 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
+    public int? GetPriceOfType(Item.Type type)
+    {
+        return GetEntryOfType(type)?.count;
+    }
+
+    public int? GetCountOfType(Item.Type type)
+    {
+        return GetEntryOfType(type)?.price;
+    }
+
     // Adds missing ItemEntries with a count of zero and default prices
     public void AddMissingItems()
     {
-        Item.Type[] values = (Item.Type[])Enum.GetValues(typeof(Item.Type));
-        HashSet<Item.Type> existing = new HashSet<Item.Type>();
-        foreach (ItemEntry entry in items)
-        {
-            existing.Add(entry.type);
-        }
-        foreach (Item.Type type in values)
+        HashSet<Item.Type> existing = items.Select((entry) => entry.type).ToHashSet<Item.Type>();
+        foreach (Item.Type type in Item.GetAllEnums())
         {
             if (!existing.Contains(type))
             {
-                ItemEntry entry = new ItemEntry
+                ItemEntry entry = new()
                 {
                     type = type,
                     count = 0,
@@ -122,10 +133,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public static int CountMax()
+    {
+        return ItemEntry.countMax;
+    }
+
     // Randomizes the item prices and counts in theh inventory
     public void RandomizePort()
     {
-        //items.Sort(1,2,Comparer<ItemEntry>.Create((i1, i2) => {  (int)UnityEngine.Random.value })) ;
         foreach (ItemEntry entry in items)
         {
             float priceRand = UnityEngine.Random.Range(0.75f, 1.25f);

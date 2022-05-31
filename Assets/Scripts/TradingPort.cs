@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-using UnityEngine.Serialization;
 
 
 public class TradingPort : MonoBehaviour
 {
-    //private BoxCollider2D bc;
     private Inventory inventory;
     private TMPro.TextMeshPro text;
 

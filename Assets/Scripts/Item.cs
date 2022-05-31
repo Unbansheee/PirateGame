@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,11 @@ public class Item
                 Debug.LogWarning("Missing base price for type " + type);
                 return 0;
         }
+    }
+
+    public static Type[] GetAllEnums()
+    {
+        return (Type[])Enum.GetValues(typeof(Item.Type));
     }
 
 }
