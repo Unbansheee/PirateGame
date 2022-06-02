@@ -73,4 +73,6 @@ crashlytics-build.properties
 
 #custom
 *.psd
-*.meta
+.idea/.idea.PirateGame/.idea/workspace.xml
+
+.idea/.idea.PirateGame/.idea/

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -26,22 +27,15 @@ public class ShipControls : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 50.0f;
 
+
     public float speed;
-    private int _currentGear = 0;
+    public int _currentGear = 0;
     public List<KeyValuePair> gears = new List<KeyValuePair>();
     private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
     
     [SerializeField]
     private Direction _mouseDirection;
     
-    IEnumerator Lerp(float begin, float end, float time){
-        float n = 0;  // lerped value
-        for(float f = 0; f <= time; f += Time.deltaTime) {
-            n = Mathf.Lerp(begin, end, f / time); // passing in the start + end values, and using our elapsed time 'f' as a portion of the total time 'x'
-            speed = n;
-            yield return n;
-        }
-    }
 
 
     void UpdateMouseDirection()
@@ -97,14 +91,29 @@ public class ShipControls : MonoBehaviour
         {
             _currentGear++;
             _currentGear = math.clamp(_currentGear, -1, 3);
-            StartCoroutine(Lerp(speed, gearSpeeds[_currentGear], 2));
         }
         if(Input.GetKeyDown(KeyCode.S))
         {
             _currentGear--;
             _currentGear = math.clamp(_currentGear, -1, 3);
-            StartCoroutine(Lerp(speed, gearSpeeds[_currentGear], 2));
         }
+
+        //Accelerate or decelerate parabolically to meet target speed
+        if (speed < gearSpeeds[_currentGear])
+        {
+            speed += (math.abs(speed - gearSpeeds[_currentGear]) / 2) * Time.deltaTime;
+        }
+        else if (speed > gearSpeeds[_currentGear])
+        {
+            speed -= (math.abs(speed - gearSpeeds[_currentGear]) / 2) * Time.deltaTime;
+        }
+        
+        //If speed is within a certain tolerance of target, round to the target speed to prevent very very long tiny numbers
+        if (math.abs(speed - gearSpeeds[_currentGear]) < 0.1f)
+        {
+            speed = gearSpeeds[_currentGear];
+        }
+        
 
         var shipPos = transform;
         transform.position = shipPos.position + (shipPos.up * (speed * Time.deltaTime));
