@@ -51,6 +51,7 @@ Material:
     - _DistortionScale: 2.91
     - _DistortionSpeed: 1
     - _EvolutionSpeed: 1
+    - _NormalIntensity: 0.14
     - _NormalStrength: 0.12
     - _QueueControl: 0
     - _QueueOffset: 0

@@ -27,6 +27,8 @@ public class ShipControls : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 50.0f;
 
+    public new Camera camera;
+    public Vector3 mousePosRelative;
 
     public float speed;
     public int _currentGear = 0;
@@ -40,11 +42,9 @@ public class ShipControls : MonoBehaviour
 
     void UpdateMouseDirection()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Physics.Raycast(ray, out hit);
-        var mousePosWorld = hit.point;
-        var mousePosRelative = transform.InverseTransformPoint(mousePosWorld);
+        Vector3 mousePosWorld = camera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosWorld.z = 0;
+        mousePosRelative = Vector3.Normalize(transform.InverseTransformPoint(mousePosWorld));
         if (mousePosRelative.x < transform.localPosition.x && math.abs(mousePosRelative.y) < math.abs(mousePosRelative.x))
         {
             _mouseDirection = Direction.LEFT;
