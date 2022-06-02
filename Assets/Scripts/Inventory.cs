@@ -106,12 +106,12 @@ public class Inventory : MonoBehaviour
 
     public int? GetPriceOfType(Item.Type type)
     {
-        return GetEntryOfType(type)?.count;
+        return GetEntryOfType(type)?.price;
     }
 
     public int? GetCountOfType(Item.Type type)
     {
-        return GetEntryOfType(type)?.price;
+        return GetEntryOfType(type)?.count;
     }
 
     // Adds missing ItemEntries with a count of zero and default prices

@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7756950953993328573}
   - component: {fileID: 7756950953993328574}
+  - component: {fileID: 4351570070835550883}
   - component: {fileID: 7756950953993328575}
   - component: {fileID: 637841870829728682}
   - component: {fileID: 8394683394925348922}
@@ -285,6 +286,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4351570070835550883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756950953993328568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf52f94796100f74088ce99e3fb3381f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipName: Flying Harvestman
 --- !u!114 &7756950953993328575
 MonoBehaviour:
   m_ObjectHideFlags: 0

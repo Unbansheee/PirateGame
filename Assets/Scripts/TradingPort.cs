@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-
 public class TradingPort : MonoBehaviour
 {
     private Inventory inventory;
     private TMPro.TextMeshPro text;
+
+    [SerializeField]
+    private Canvas tradeWindow;
 
     [SerializeField]
     private TMPro.TextMeshPro textObject;
@@ -28,20 +29,18 @@ public class TradingPort : MonoBehaviour
     {
         Debug.Log(textObject.text);
         textObject.text = portName;
+
+        //temp
+        inventory.RandomizePort();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             portEntered = true;
-            Debug.Log("in");
+            GameManager.BarterMenu.Initialize(this, collision.GetComponent<Ship>());
         }
     }
 
@@ -50,14 +49,23 @@ public class TradingPort : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             portEntered = true;
-            Debug.Log("out");
+            GameManager.BarterMenu.gameObject.SetActive(false);
         }
     }
     
-    void UpdatePrices()
+    private void UpdatePrices()
     {
         
     }
 
+    public Inventory GetInventory()
+    {
+        return inventory;
+    }
+
+    public string GetName()
+    {
+        return portName;
+    }
 
 }

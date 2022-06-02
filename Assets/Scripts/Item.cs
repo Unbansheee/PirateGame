@@ -44,6 +44,28 @@ public class Item
         }
     }
 
+    public static string GetName(Type type)
+    {
+        switch (type)
+        {
+            case Type.TWIG:
+                return "Twig";
+            case Type.BARK:
+                return "Bark";
+            case Type.GRASS_BUSHELL:
+                return "Grass Bushell";
+            case Type.PEBBLE:
+                return "Pebble";
+            case Type.SPIDER_WEB:
+                return "Spider Web";
+            case Type.APHIDS:
+                return "Aphids";
+            default:
+                Debug.LogWarning("Missing base price for type " + type);
+                return "";
+        }
+    }
+
     public static Type[] GetAllEnums()
     {
         return (Type[])Enum.GetValues(typeof(Item.Type));

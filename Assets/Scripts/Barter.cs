@@ -30,12 +30,23 @@ public class Barter// : MonoBehaviour
             int? price = port.GetPriceOfType(itemType);
             if (price != null)
             {
-                sum += transaction[itemType] * (int)port.GetPriceOfType(itemType);
+                sum += transaction[itemType] * (int)port.GetPriceOfType(itemType).Value;
             }
         }
         payment = sum;
         return payment;
     }
+
+    // If negative trade flow of resources goes to
+    public void SetTotalSoldToPort(Item.Type type, int count)
+    {
+        // TODO fix to check for bounds
+        //int dif = transaction[type] - count;
+        transaction[type] = -count;
+        CalculatePayment();
+        //SellToPort(type, dif);
+    }
+    
 
     // Updates the transaction to sell up to 'count' items to the port
     public void SellToPort(Item.Type type, int count)
