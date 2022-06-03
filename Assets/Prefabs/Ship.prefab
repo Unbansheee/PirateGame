@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 637841870829728682}
   - component: {fileID: 8394683394925348922}
   - component: {fileID: 8692564570368325283}
+  - component: {fileID: 8532843667620415098}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -312,6 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+  camera: {fileID: 0}
+  mousePosRelative: {x: 0, y: 0, z: 0}
   speed: 0
   _currentGear: 0
   gears:
@@ -377,6 +380,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0186885, y: -0.37376976}
   m_Size: {x: 1.5245913, y: 3.65246}
   m_Direction: 0
+--- !u!114 &8532843667620415098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756950953993328568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5810132ad4190b24098e61646ca685d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
 --- !u!1 &7756950954097698305
 GameObject:
   m_ObjectHideFlags: 0
