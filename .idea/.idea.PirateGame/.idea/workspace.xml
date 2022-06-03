@@ -3,7 +3,49 @@
   <component name="ChangeListManager">
     <list default="true" id="ac634a30-a18a-4275-ab01-f55e8d35762b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/M_Water.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShaderWater.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ShaderWater.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CellularAutomata.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CellularAutomata.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/NoiseData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/NoiseData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TerrainData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TerrainData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TextureData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TextureData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UpdatableData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UpdatableData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/MapGeneratorEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/MapGeneratorEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/UpdatableDataEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/UpdatableDataEditor.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShipControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShipControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileAutomata.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileAutomata/TileAutomata.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileAutomata/TileAutomata.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/EndlessTerrain.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/EndlessTerrain.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/FalloffGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/FalloffGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/MeshGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/MeshGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/Noise.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/Noise.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultNoise.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultNoise.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTerrain.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTerrain.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTexture.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTexture.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TextureGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TextureGenerator.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +74,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="G:/Libraries/Desktop/piratebuild/PirateGame.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="G:\Libraries\Desktop\piratebuild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Software\Unity\2021.3.2f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Projects\Unity\PirateGame -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -73,7 +123,8 @@
       <workItem from="1652600129887" duration="6241000" />
       <workItem from="1652607293818" duration="2563000" />
       <workItem from="1652671903902" duration="654000" />
-      <workItem from="1652769134241" duration="2382000" />
+      <workItem from="1654210384389" duration="1519000" />
+      <workItem from="1654211988596" duration="704000" />
     </task>
     <servers />
   </component>
