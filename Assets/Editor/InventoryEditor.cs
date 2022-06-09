@@ -21,7 +21,7 @@ public class InventoryEditor : Editor
 
         if (GUILayout.Button("Randomize"))
         {
-            int coins = (int) (100 + Random.value * 200);
+            int coins = (int) (100 + UnityEngine.Random.value * 200);
             script.SetCoins(coins);
             script.AddMissingItems();
             script.RandomizePort();
