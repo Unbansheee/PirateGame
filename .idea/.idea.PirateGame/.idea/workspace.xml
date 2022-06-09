@@ -3,49 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ac634a30-a18a-4275-ab01-f55e8d35762b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PirateGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/M_Water.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShaderWater.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ShaderWater.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CellularAutomata.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CellularAutomata.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/NoiseData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/NoiseData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TerrainData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TerrainData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TextureData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/TextureData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UpdatableData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UpdatableData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/MapGeneratorEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/MapGeneratorEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/UpdatableDataEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/UpdatableDataEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShipControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShipControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileAutomata.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileAutomata/TileAutomata.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileAutomata/TileAutomata.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/EndlessTerrain.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/EndlessTerrain.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/FalloffGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/FalloffGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/MeshGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/MeshGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/Noise.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/Noise.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultNoise.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultNoise.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTerrain.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTerrain.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTexture.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainAssets/DefaultTexture.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainDisplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainDisplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TerrainGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TextureGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/[DEPRECATED]Terrain/TextureGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/CellAutomataGUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/CellAutomataGUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/TileAutomata.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/TileAutomata/TileAutomata.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/TileAutomata/TileAutomata.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +87,7 @@
       <workItem from="1652671903902" duration="654000" />
       <workItem from="1654210384389" duration="1519000" />
       <workItem from="1654211988596" duration="704000" />
+      <workItem from="1654808866369" duration="3069000" />
     </task>
     <servers />
   </component>
