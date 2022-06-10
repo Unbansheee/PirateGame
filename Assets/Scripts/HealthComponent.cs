@@ -12,14 +12,14 @@ public class HealthComponent : MonoBehaviour
     public bool DoDamage(float damage) // Returns true if health is 0
     {
         health = health - damage;
-        health = Mathf.Clamp(health + damage, 0, maxHealth) ;
+        health = Mathf.Clamp(health, 0, maxHealth) ;
         return health <= 0;
     }
 
     public bool Heal(float amount) // Returns true if full health
     {
         health = health + amount;
-        health = Mathf.Clamp(health + amount, 0, maxHealth) ;
+        health = Mathf.Clamp(health, 0, maxHealth) ;
         return IsDead();
     }
 
