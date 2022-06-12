@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242d27d554fcdfb4dbf1abdbfd07559c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  itemType: 0
   ItemName: {fileID: 1230013616652601283}
   ItemPrice: {fileID: 7330160965514392377}
   ArrowLeft: {fileID: 8871727294188167927}
@@ -683,7 +683,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4492825953856325327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4739318727635219799}
+        m_TargetAssemblyTypeName: ItemEntryUI, Assembly-CSharp
+        m_MethodName: OnAddOneToPort
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3871126948253535763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1087,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4573410957417928925}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4739318727635219799}
+        m_TargetAssemblyTypeName: ItemEntryUI, Assembly-CSharp
+        m_MethodName: OnRemoveOneFromPort
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4521211408575350519
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,7 +33,7 @@ public class Barter// : MonoBehaviour
                 sum += transaction[itemType] * (int)port.GetPriceOfType(itemType).Value;
             }
         }
-        payment = sum;
+        payment = -sum;  // negative since flow of coins opposite flow of items
         return payment;
     }
 
@@ -85,7 +85,7 @@ public class Barter// : MonoBehaviour
     // Returns true if both parties have the funds to pay for the transaction
     public bool IsValidTrade()
     {
-        return payment <= 0 ? port.GetCoins() >= -payment : ship.GetCoins() >= payment;
+        return payment <= 0 ? ship.GetCoins() >= -payment : port.GetCoins() >= payment;
     }
 
     // Exits the trade
@@ -106,24 +106,24 @@ public class Barter// : MonoBehaviour
             int count = transaction[itemType];
             if (count < 0)
             {
-                port.RemoveItem(itemType, count);
-                ship.AddItem(itemType, count);
+                port.AddItem(itemType, -count);
+                ship.RemoveItem(itemType, -count);
             }
             else if (count > 0)
             {
-                port.AddItem(itemType, count);
-                ship.RemoveItem(itemType, count);
+                port.RemoveItem(itemType, count);
+                ship.AddItem(itemType, count);
             }
         }
         if (payment < 0)
         {
-            port.RemoveCoins(payment);
-            ship.AddCoins(payment);
+            port.AddCoins(-payment);
+            ship.RemoveCoins(-payment);
         }
         else if (payment > 0)
         {
-            port.AddCoins(payment);
-            ship.RemoveCoins(payment);
+            port.RemoveCoins(payment);
+            ship.AddCoins(payment);
         }
     }
 

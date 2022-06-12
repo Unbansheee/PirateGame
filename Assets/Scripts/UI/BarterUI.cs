@@ -60,6 +60,8 @@ public class BarterUI : MonoBehaviour
         //    sum += entry.GetPriceDifference();
         //}
         int sum = barter.CalculatePayment();
+        ArrowLeft.enabled = sum < 0;
+        ArrowRight.enabled = sum > 0;
         CoinsCount.SetText("" + sum);
         if (barter.IsValidTrade())
         {

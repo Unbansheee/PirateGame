@@ -59,12 +59,24 @@ public class ItemEntryUI : MonoBehaviour
     {
         tradeDifference = (int)Slider.value;
         AddToPortButton.interactable = shipMax > -tradeDifference;
-        AddToShipButton.interactable = portMax < tradeDifference;
+        AddToShipButton.interactable = portMax > tradeDifference;
         ItemCount.SetText("" + tradeDifference + " (" + (tradeDifference * price) + ")");
         ArrowLeft.enabled = tradeDifference < 0;
         ArrowRight.enabled = tradeDifference > 0;
         barterMenu.GetTrade().SetTotalSoldToPort(itemType, -tradeDifference);
         barterMenu.OnMenuUpdate();
+    }
+
+    public void OnAddOneToPort()
+    {
+        Slider.value -= 1;
+        OnSliderChange();
+    }
+
+    public void OnRemoveOneFromPort()
+    {
+        Slider.value += 1;
+        OnSliderChange();
     }
 
     public int GetCountDifference()
