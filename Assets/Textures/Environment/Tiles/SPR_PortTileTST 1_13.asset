@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: SPR_PortTileTST 1_13
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -789134574, guid: 95dabeabcb01ded4ebf09e352579db39, type: 3}
+  m_Sprite: {fileID: -2030870574, guid: 503bc0cf6dbe19b4da7033000c678abe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
