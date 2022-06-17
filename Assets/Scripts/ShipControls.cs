@@ -21,6 +21,9 @@ public class ShipControls : MonoBehaviour
 
     [SerializeField] private float rotationSpeed = 50.0f;
 
+    [SerializeField]
+    private SpriteRenderer spritewings;
+
     public new Camera camera;
     public Vector3 mousePosRelative;
 
@@ -29,6 +32,11 @@ public class ShipControls : MonoBehaviour
     public List<KeyValuePair> gears = new List<KeyValuePair>();
     private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
 
+    private Animator anim;
+    
+    [SerializeField]
+    private Direction _mouseDirection;
+    
     public List<Cannon> cannons;
     public GameObject directionIndicator;
 
@@ -71,7 +79,7 @@ public class ShipControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = this.GetComponent<Animator>();
     }
 
 
@@ -164,6 +172,12 @@ public class ShipControls : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    public int getGear()
+    {
+        return _currentGear;
     }
 }
 
