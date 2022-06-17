@@ -778,6 +778,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2586229944844788532, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7756950953993328568, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -834,8 +838,32 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1858898233}
+    - target: {fileID: 7756950953993328575, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: spritewings
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+--- !u!95 &7756950953517981228
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611797403}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ef312f48894e64459bac9f83bf846ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8815330418131199452
 PrefabInstance:
   m_ObjectHideFlags: 0
