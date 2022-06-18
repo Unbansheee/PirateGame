@@ -40,7 +40,8 @@ public class ShipControls : MonoBehaviour
     public List<Cannon> cannons;
     public GameObject directionIndicator;
 
-   
+    //[SerializeField] private Direction _mouseDirection;
+
 
 
 
