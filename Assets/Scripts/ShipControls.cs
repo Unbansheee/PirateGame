@@ -44,6 +44,7 @@ public class ShipControls : MonoBehaviour
 
 
 
+
     void UpdateMouseDirection()
     {
         Vector3 mousePosWorld = camera.ScreenToWorldPoint(Input.mousePosition);
