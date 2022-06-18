@@ -673,6 +673,8 @@ MonoBehaviour:
   - Gear: 3
     Speed: 15
   _mouseDirection: 0
+  cannons: []
+  directionIndicator: {fileID: 0}
 --- !u!114 &637841870829728682
 MonoBehaviour:
   m_ObjectHideFlags: 0

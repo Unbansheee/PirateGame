@@ -25,9 +25,18 @@ public class SpriteAnimation : MonoBehaviour
                 break;
             case 0:
                 anim.SetBool("ShipMovement1", false);
+                anim.SetBool("ShipMovement-1", false);//
                 break;
             case 1:
                 anim.SetBool("ShipMovement1", true);
+                anim.SetBool("ShipMovement2", false);//
+                break;
+            case 2:
+                anim.SetBool("ShipMovement2", true);
+                anim.SetBool("ShipMovement3", false);//
+                break;
+            case 3:
+                anim.SetBool("ShipMovement3", true);
                 break;
             default:
                 Debug.LogWarning("Animator cant handle gear");
