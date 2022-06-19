@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     {
         NONE,
         START,
-        FROGE
+        FROGE,
     }
 
     [SerializeField]
