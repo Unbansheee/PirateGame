@@ -5534,6 +5534,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -172.171
       objectReference: {fileID: 0}
+    - target: {fileID: 7435755479293753831, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: -0.84624875
+      objectReference: {fileID: 0}
     - target: {fileID: 7756950953755678164, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -5552,7 +5556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756950953993328568, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: ShipPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 7756950953993328568, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_TagString
@@ -5652,6 +5656,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8394683394925348922, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394683394925348922, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
