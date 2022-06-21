@@ -34,6 +34,7 @@ public class EnemyAI : MonoBehaviour
     private float playerDistance = float.PositiveInfinity;
     private float playerRadians = 0f;
     private float circleRadians = 0f;
+    private float rotationDirection = 0.75f;
     private bool canFire = true;
     private Vector3? positionCheck = null;
 
@@ -143,7 +144,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            circleRadians = (circleRadians + .75f * aStarAI.maxSpeed * Time.deltaTime * circleRadius / 180f * Mathf.PI) % (2 * Mathf.PI); 
+            circleRadians = (circleRadians + rotationDirection * aStarAI.maxSpeed * Time.deltaTime * circleRadius / 180f * Mathf.PI) % (2 * Mathf.PI); 
             target.position = (circleRadius * new Vector3(Mathf.Cos(playerRadians), Mathf.Sin(playerRadians), 0f)) + player.transform.position;
             if (UnityEngine.Random.Range(0, 100) < 1)
             {
@@ -205,6 +206,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
         canFire = false;
+        rotationDirection *= (UnityEngine.Random.Range(0, 3) == 0 ? -1f : 1f); // 25% chance to toggle rotation
         Invoke("ReloadCannon", UnityEngine.Random.Range(2, 4));
     }
 
