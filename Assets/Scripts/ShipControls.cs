@@ -40,6 +40,11 @@ public class ShipControls : MonoBehaviour
     public List<Cannon> cannons;
     public GameObject directionIndicator;
 
+    private bool canFire = true;
+
+    [SerializeField]
+    private float reloadTime = 1f;
+
     //[SerializeField] private Direction _mouseDirection;
 
 
@@ -163,7 +168,7 @@ public class ShipControls : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
+        if (canFire && Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
         {
             foreach (var cannon in cannons)
             {
@@ -172,6 +177,8 @@ public class ShipControls : MonoBehaviour
                     cannon.Fire();
                 }
             }
+            canFire = false;
+            Invoke("ReloadCannon", reloadTime);
         }
     }
 
@@ -180,5 +187,12 @@ public class ShipControls : MonoBehaviour
     {
         return _currentGear;
     }
+
+
+    private void ReloadCannon()
+    {
+        canFire = true;
+    }
+
 }
 
