@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
@@ -11,9 +12,19 @@ public class HealthComponent : MonoBehaviour
 
     public bool DoDamage(float damage) // Returns true if health is 0
     {
+        
         health = health - damage;
         health = Mathf.Clamp(health, 0, maxHealth) ;
+        //call DamageReceived on IDamageable interface
+        if (gameObject.GetComponent<IDamageable>() != null)
+        {
+            gameObject.GetComponent<IDamageable>().DamageReceived(damage);
+        }
+        
+        
         return health <= 0;
+        
+        
     }
 
     public bool Heal(float amount) // Returns true if full health
@@ -52,6 +63,7 @@ public class HealthComponent : MonoBehaviour
     public float GetHealthPercent()
     {
         return health / maxHealth;
+        
     }
     
     public float GetHealth()
@@ -70,6 +82,8 @@ public class HealthComponent : MonoBehaviour
     {
         
     }
+
+
 
     // Update is called once per frame
     void Update()

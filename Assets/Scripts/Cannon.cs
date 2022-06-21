@@ -8,6 +8,8 @@ public class Cannon : MonoBehaviour
     public GameObject Cannonball;
     [SerializeField]
     public Direction cannonDirection = Direction.FORWARD;
+    public Vector3 currentVelocity;
+    public Vector3 prevPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +19,19 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentVelocity = (transform.position - prevPosition) / Time.deltaTime;
+        prevPosition = transform.position;
+
     }
 
     public void Fire()
     {
-        Instantiate(Cannonball, transform.position, transform.rotation);
+        var ball = Instantiate(Cannonball, transform.position, transform.rotation);
+        //apply current velocity to the ball
+        ball.GetComponent<Rigidbody2D>().velocity = currentVelocity;
+        ball.GetComponent<Rigidbody2D>().AddForce(transform.up * 50, ForceMode2D.Impulse);
+        ball.GetComponent<CannonBall>().owner = transform.parent.gameObject;
+
+
     }
 }

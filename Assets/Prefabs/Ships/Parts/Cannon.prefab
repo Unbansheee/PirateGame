@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cannonball: {fileID: 3933814521801502022, guid: 003108dced1024742bfda27187eb6946, type: 3}
   cannonDirection: 2
+  currentVelocity: {x: 0, y: 0, z: 0}
+  prevPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &1562459458908499229
 SpriteRenderer:
   m_ObjectHideFlags: 0

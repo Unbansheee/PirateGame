@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 enum Faction
@@ -11,7 +12,7 @@ enum Faction
     FROG
 }
 
-public class Ship : MonoBehaviour
+public class Ship : MonoBehaviour, IDamageable 
 {
     private Inventory inventory;
 
@@ -19,9 +20,6 @@ public class Ship : MonoBehaviour
     private string shipName;
     [SerializeField]
     private Faction faction;
-
-
-    private HealthComponent health;
 
     private void Start()
     {
@@ -32,7 +30,6 @@ public class Ship : MonoBehaviour
 
     private void Awake()
     {
-        health = GetComponent<HealthComponent>();
         inventory = GetComponent<Inventory>();
     }
 
@@ -45,4 +42,16 @@ public class Ship : MonoBehaviour
     {
         return shipName;
     }
+
+    
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    public void DamageReceived(float damage)
+    {
+
+    }
 }
+

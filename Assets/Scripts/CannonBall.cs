@@ -1,30 +1,41 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class CannonBall : MonoBehaviour
 {
     public float speed;
+    public Vector3 velocity;
+
+    public GameObject owner;
     
-    //public Collider collider;
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = transform.position + transform.up * speed * Time.deltaTime;
+        //transform.position = transform.position + transform.up * speed * Time.deltaTime;
 
     }
-    
 
+    
+    
     private void OnCollisionEnter2D(Collision2D col)
     {
-        print(col.gameObject.name);
+        //if collided object is not owner
+        if (col.gameObject == owner) return;
 
-        if (col.gameObject.GetComponent<HealthComponent>() != null)
+        //if hit object implements IDestroyable interface, call Destroy()
+        if (col.gameObject.GetComponent<IDamageable>() != null)
         {
-            col.gameObject.GetComponent<HealthComponent>().DoDamage(10);
-            Destroy(gameObject);
+            
+            if (col.gameObject.GetComponent<HealthComponent>().DoDamage(10))
+            {
+                col.gameObject.GetComponent<IDamageable>().Destroy();
+            }
+            
         }
+        Destroy(gameObject);
 
 
     }

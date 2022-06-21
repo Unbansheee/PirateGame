@@ -28,6 +28,8 @@ public class ShipControls : MonoBehaviour
     public Vector3 mousePosRelative;
 
     public float speed;
+    [SerializeField]
+    private float rotationAmount;
     public int _currentGear = 0;
     public List<KeyValuePair> gears = new List<KeyValuePair>();
     private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
@@ -123,12 +125,22 @@ public class ShipControls : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+            //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+            rotationAmount = rotationAmount + rotationSpeed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+            //rotate the object counterclockwise
+            rotationAmount = rotationAmount + -rotationSpeed * Time.deltaTime;
+            
+            
+            //transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+        }
+
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+            rotationAmount = rotationAmount / 1.04f;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -158,8 +170,11 @@ public class ShipControls : MonoBehaviour
         {
             speed = gearSpeeds[_currentGear];
         }
-
-
+            
+        //clamp rotationAmount to -100 to 100
+        rotationAmount = math.clamp(rotationAmount, -100, 100);
+        transform.Rotate(0, 0, rotationAmount * Time.deltaTime);
+        
         var shipPos = transform;
         transform.position = shipPos.position + (shipPos.up * (speed * Time.deltaTime));
 
