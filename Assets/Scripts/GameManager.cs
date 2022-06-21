@@ -16,22 +16,24 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private BarterUI barterMenu;
     [SerializeField]
-    private List<List<TradingPort>> ports;
-    [SerializeField]
     private Ship playerShip;
+    [SerializeField]
+    private List<TradingPort> LevelPorts01;
 
     private Level currrentLevel;
 
     // Start is called before the first frame update
     static GameManager Instance;
+    private List<List<TradingPort>> ports;
 
     void Awake()
     {
         Instance = this;
         Instance.barterMenu = barterMenu;
-        Instance.ports = ports;
         Instance.playerShip = playerShip;
         currrentLevel = Level.START;
+        Instance.ports = new();
+        Instance.ports.Add(LevelPorts01);
     }
 
     // Returns the barter menu instance
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
     private TradingPort RandomPortInLevel(TradingPort exclude = null, Level level = Level.NONE)
     {
         level = level == Level.NONE ? currrentLevel : level;
-        List<TradingPort> list = ports[(int)level];
+        List<TradingPort> list = ports[(int)level - 1];
         int number = list.Count;
         if (number == 0 || (!exclude && number == 1))
         {
@@ -71,6 +73,6 @@ public class GameManager : MonoBehaviour
     // Returns list of ports in current level
     public static List<TradingPort> GetPortsInLevel()
     {
-        return Instance.ports[(int)Instance.currrentLevel];
+        return Instance.ports[(int)Instance.currrentLevel - 1];
     }
 }
