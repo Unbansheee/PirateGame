@@ -186,7 +186,13 @@ public class EnemyAI : MonoBehaviour
 
     private bool CanSeePlayer()
     {
-        return playerDistance < visionRange;
+        if (playerDistance > visionRange)
+        {
+            return false;
+        }
+        int layer_mask = LayerMask.GetMask("Islands") | LayerMask.GetMask("Player");
+        RaycastHit2D hits = Physics2D.Raycast(transform.position, player.transform.position - transform.position, visionRange*2, layer_mask);
+        return hits.collider && hits.collider.gameObject.CompareTag("Player");
     }
 
     private bool IsPlayerInCirclingRange()

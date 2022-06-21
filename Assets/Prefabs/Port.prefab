@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7381906301853850620}
   - component: {fileID: 5399247718791547791}
   - component: {fileID: 6056023389104951380}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Port
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 7075717377336966297}
   - component: {fileID: 6122680872198656667}
   - component: {fileID: 7386343089658518906}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PortNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

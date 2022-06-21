@@ -30,7 +30,7 @@ public class Cannon : MonoBehaviour
         //apply current velocity to the ball
         ball.GetComponent<Rigidbody2D>().velocity = currentVelocity;
         ball.GetComponent<Rigidbody2D>().AddForce(transform.up * 50, ForceMode2D.Impulse);
-        ball.GetComponent<CannonBall>().owner = transform.parent.gameObject;
+        ball.GetComponent<CannonBall>().owner = transform.parent.parent.gameObject;
 
 
     }
