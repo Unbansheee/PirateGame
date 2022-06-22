@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Ship playerShip;
     [SerializeField]
+    private PauseMenu pauseMenu;
+    [SerializeField]
     private List<TradingPort> LevelPorts01;
 
     public LevelTarget end;
@@ -50,6 +52,8 @@ public class GameManager : MonoBehaviour
     public static Ship Player { get { return Instance.playerShip; } }
 
     public static HeadsUpDisplayUI GUI { get { return Instance.gui; } }
+
+    public static PauseMenu PauseMenu { get { return Instance.pauseMenu; } }
 
     // Returns a random port in the current level excluding the passed port
     // If there are no remaining ports to choose from returns null
