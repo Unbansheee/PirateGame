@@ -559,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipName: Flying Harvestman
   faction: 0
+  shipwreck: {fileID: 4694076247813468070, guid: 9ce5f2855f0eb9146b2c0ce976635b5a, type: 3}
 --- !u!114 &7756950953993328575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,6 +577,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   mousePosRelative: {x: 0, y: 0, z: 0}
   speed: 0
+  rotationAmount: 0
   _currentGear: 0
   gears:
   - Gear: -1
@@ -591,6 +593,7 @@ MonoBehaviour:
   _mouseDirection: 0
   cannons: []
   directionIndicator: {fileID: 0}
+  reloadTime: 1
 --- !u!114 &637841870829728682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +659,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7756950954097698305
 GameObject:
   m_ObjectHideFlags: 0

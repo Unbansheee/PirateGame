@@ -10,9 +10,6 @@ public class HeadsUpDisplayUI : MonoBehaviour
     public GameObject Ship_Gear_Reverse_Full;
     public TMPro.TextMeshProUGUI message;
 
-    [SerializeField]
-
-
     private ShipControls controller;
 
 
