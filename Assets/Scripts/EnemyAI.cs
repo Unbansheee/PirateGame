@@ -193,28 +193,32 @@ public class EnemyAI : MonoBehaviour
 
     public void SetState(ShipState state)
     {
-        //Debug.Log(state);
-        switch (state)
+        if (target != null)
         {
-            case ShipState.STATIONARY:
-                target = waypoint;
-                break;
-            case ShipState.FLEEING:
-            case ShipState.ROAMING:
-                TradingPort avoid = player.GetComponent<Ship>().CurrentPort;
-                if (!avoid)
-                    avoid = target.gameObject.GetComponent<TradingPort>();
-                target = GameManager.RandomPort(avoid).transform;
-                break;
-            case ShipState.ADVANCING:
-                target = player.transform;
-                break;
-            case ShipState.CIRCLING:
-                target = waypoint;
-                break;
-            case ShipState.ATTACKING:
-                break;
+            switch (state)
+            {
+                case ShipState.STATIONARY:
+                    target = waypoint;
+                    break;
+                case ShipState.FLEEING:
+                case ShipState.ROAMING:
+                    TradingPort avoid = player.GetComponent<Ship>().CurrentPort;
+                    if (!avoid)
+                        avoid = target.gameObject.GetComponent<TradingPort>();
+                    target = GameManager.RandomPort(avoid).transform;
+                    break;
+                case ShipState.ADVANCING:
+                    target = player.transform;
+                    break;
+                case ShipState.CIRCLING:
+                    target = waypoint;
+                    break;
+                case ShipState.ATTACKING:
+                    break;
+            }
         }
+        //Debug.Log(state);
+
         this.state = state;
     }
 
