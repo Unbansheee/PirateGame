@@ -39,7 +39,7 @@ public class SpriteAnimation : MonoBehaviour
                 anim.SetBool("ShipMovement3", true);
                 break;
             default:
-                Debug.LogWarning("Animator cant handle gear");
+                //Debug.LogWarning("Animator cant handle gear");
                 break;
         }
 

@@ -69,8 +69,18 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerDistance = (transform.position - player.transform.position).magnitude;
-        playerRadians = Mathf.Atan2(player.transform.position.y, player.transform.position.x) + circleRadians;        
+        if (player == null)
+        {
+            if (state != ShipState.ROAMING)
+            {
+                SetState(ShipState.ROAMING);
+            }
+        }
+        else
+        {
+            playerDistance = (transform.position - player.transform.position).magnitude;
+            playerRadians = Mathf.Atan2(player.transform.position.y, player.transform.position.x) + circleRadians;
+        }
         switch(state)
         {
             case ShipState.STATIONARY:
@@ -198,7 +208,7 @@ public class EnemyAI : MonoBehaviour
 
     private bool CanSeePlayer()
     {
-        if (playerDistance > visionRange)
+        if (player == null || playerDistance > visionRange)
         {
             return false;
         }
