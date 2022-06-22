@@ -79,6 +79,7 @@ public class BarterUI : MonoBehaviour
     {
         //canvas.enabled = false;
         gameObject.SetActive(false);
+        GameManager.Player.IsTrading = false;
     }
 
     public void ConfirmTrade()

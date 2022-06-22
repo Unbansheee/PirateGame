@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private BarterUI barterMenu;
     [SerializeField]
+    HeadsUpDisplayUI gui;
+    [SerializeField]
     private Ship playerShip;
     [SerializeField]
     private List<TradingPort> LevelPorts01;
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         Instance.barterMenu = barterMenu;
+        Instance.gui = gui;
         Instance.playerShip = playerShip;
         currrentLevel = Level.START;
         Instance.ports = new();
@@ -41,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     // Returns the player ship
     public static Ship Player { get { return Instance.playerShip; } }
+
+    public static HeadsUpDisplayUI GUI { get { return Instance.gui; } }
 
     // Returns a random port in the current level excluding the passed port
     // If there are no remaining ports to choose from returns null

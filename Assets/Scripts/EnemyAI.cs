@@ -112,7 +112,7 @@ public class EnemyAI : MonoBehaviour
 
     private void UpdateStationary()
     {
-        if (CanSeePlayer())
+        if (CanSeePlayer() && CanAttackPlayer())
         {
             SetState(ShipState.ADVANCING);
         }
@@ -120,7 +120,7 @@ public class EnemyAI : MonoBehaviour
 
     private void UpdateRoaming()
     {
-        if (CanSeePlayer())
+        if (CanSeePlayer() && CanAttackPlayer())
         {
             SetState(ShipState.ADVANCING);
             positionCheck = null;
@@ -134,7 +134,7 @@ public class EnemyAI : MonoBehaviour
 
     private void UpdateAdvancing()
     {
-        if (!CanSeePlayer())
+        if (!CanSeePlayer() || !CanAttackPlayer())
         {
             SetState(ShipState.ROAMING);
         }
@@ -160,6 +160,10 @@ public class EnemyAI : MonoBehaviour
 
     private void UpdateCircling()
     {
+        if (!CanAttackPlayer())
+        {
+            SetState(ShipState.ROAMING);
+        }
         if (!IsPlayerInCirclingRange())
         {
             SetState(ShipState.ADVANCING);
@@ -215,6 +219,11 @@ public class EnemyAI : MonoBehaviour
         int layer_mask = LayerMask.GetMask("Islands") | LayerMask.GetMask("Player");
         RaycastHit2D hits = Physics2D.Raycast(transform.position, player.transform.position - transform.position, visionRange*2, layer_mask);
         return hits.collider && hits.collider.gameObject.CompareTag("Player");
+    }
+
+    private bool CanAttackPlayer()
+    {
+        return player != null && !player.GetComponent<Ship>().IsAtPort();
     }
 
     private bool IsPlayerInCirclingRange()

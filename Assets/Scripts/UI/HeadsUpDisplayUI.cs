@@ -8,6 +8,7 @@ public class HeadsUpDisplayUI : MonoBehaviour
     public GameObject Ship_Gear_Full_2;
     public GameObject Ship_Gear_Full_3;
     public GameObject Ship_Gear_Reverse_Full;
+    public TMPro.TextMeshProUGUI message;
     private ShipControls controller;
 
 
@@ -47,5 +48,14 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
 
         //anim.SetBool("ShipDamage", true);
+    }
+
+    public void ToggleMessage(bool active, string text = null)
+    {
+        if (text != null)
+        {
+            message.SetText(text);
+        }
+        message.gameObject.SetActive(active);
     }
 }
