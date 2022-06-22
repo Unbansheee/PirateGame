@@ -15,6 +15,8 @@ public class FollowObject : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (follow == null)
+            return;
         Vector3 otherpos = follow.transform.position;
         transform.position = new Vector3(otherpos.x, otherpos.y, transform.position.z);
     }
