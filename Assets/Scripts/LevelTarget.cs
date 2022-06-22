@@ -51,11 +51,18 @@ public class LevelTarget : MonoBehaviour
             print(("Loading next level"));
             if (collision.gameObject.GetComponent<Inventory>().GetCoins() >= Cost)
             {
+                GameManager.Player.GetInventory().SetCoins(GameManager.Player.GetInventory().GetCoins() - Cost);
+                PersistentData.Coins = GameManager.Player.GetInventory().GetCoins();
+                PersistentData.Health = GameManager.Player.GetComponent<HealthComponent>().GetHealth();
+                //copy player inventory to persistent data
+                PersistentData._Inventory = new List<ItemEntry>(GameManager.Player.GetInventory().items);
                 SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
                 SceneManager.LoadScene(NextScene.name);
+
                 
             }
         }
     }
+    
     
 }

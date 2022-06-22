@@ -30,8 +30,7 @@ public class HealthComponent : MonoBehaviour
             gameObject.GetComponent<IDamageable>().DamageReceived(damage);
             OnDamage.Invoke();
         }
-
-        UpdatePersistentHealth();
+        
         if (health <= 0)
         {
             OnDeath.Invoke();
@@ -41,25 +40,18 @@ public class HealthComponent : MonoBehaviour
         
         
     }
-
-    private void UpdatePersistentHealth()
-    {
-        //if tag is Player update persistent health
-        if (gameObject.CompareTag("Player")) PersistentData.Health = health;
-    }
+    
     
     public bool Heal(float amount) // Returns true if full health
     {
         health = health + amount;
         health = Mathf.Clamp(health, 0, maxHealth) ;
-        UpdatePersistentHealth();
         return IsDead();
     }
 
     public bool Heal() // Returns true if full health
     {
         health = maxHealth;
-        UpdatePersistentHealth();
         return IsFullHealth();
     }
 
@@ -76,7 +68,6 @@ public class HealthComponent : MonoBehaviour
     public void SetHealth(float val)
     {
         health = val;
-        UpdatePersistentHealth();
         if (health <= 0)
         {
             OnDeath.Invoke();
