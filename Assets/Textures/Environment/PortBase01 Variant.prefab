@@ -199,6 +199,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb4d2bfb2bb7aa4c9153f8aba13307d, type: 3}
+--- !u!1 &2127097656351760173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3538421276759717418, guid: cdb4d2bfb2bb7aa4c9153f8aba13307d, type: 3}
+  m_PrefabInstance: {fileID: 3215015340460992775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!19719996 &7805120679384077789
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127097656351760173}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!4 &5193299874378914364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7245247072796177211, guid: cdb4d2bfb2bb7aa4c9153f8aba13307d, type: 3}
