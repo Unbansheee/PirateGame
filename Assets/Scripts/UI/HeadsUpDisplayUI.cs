@@ -8,14 +8,13 @@ public class HeadsUpDisplayUI : MonoBehaviour
     public GameObject Ship_Gear_Full_2;
     public GameObject Ship_Gear_Full_3;
     public GameObject Ship_Gear_Reverse_Full;
-    [SerializeField]
     private ShipControls controller;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        controller = GameManager.Player.GetComponent<ShipControls>();
     }
 
     // Update is called once per frame
