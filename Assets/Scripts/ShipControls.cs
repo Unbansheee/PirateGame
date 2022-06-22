@@ -49,7 +49,7 @@ public class ShipControls : MonoBehaviour
 
     //[SerializeField] private Direction _mouseDirection;
 
-
+    private Ship ship;
 
 
     void UpdateMouseDirection()
@@ -88,6 +88,7 @@ public class ShipControls : MonoBehaviour
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        ship = GetComponent<Ship>();
     }
 
 
@@ -158,6 +159,19 @@ public class ShipControls : MonoBehaviour
             _currentGear = math.clamp(_currentGear, -1, 3);
         }
 
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (ship.IsTrading)
+            {
+                ship.EndBartering();
+            }
+            else if (ship.IsAtPort())
+            {
+                _currentGear = 0;
+                ship.StartBartering();
+            }
+        }
+
         //Accelerate or decelerate parabolically to meet target speed
         if (speed < gearSpeeds[_currentGear])
         {
@@ -210,6 +224,7 @@ public class ShipControls : MonoBehaviour
     private void ReloadCannon()
     {
         canFire = true;
+        GetComponent<AudioSource>().Play();
     }
 
 }
