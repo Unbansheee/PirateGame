@@ -94,8 +94,11 @@ public class ShipControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateMouseDirection();
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            UpdateMouseDirection();
+        }
 
         directionIndicator.SetActive(Input.GetMouseButton(1));
         switch (_mouseDirection)
