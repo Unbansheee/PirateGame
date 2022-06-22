@@ -145,6 +145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3538421276759717418, guid: cdb4d2bfb2bb7aa4c9153f8aba13307d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3657506309345457909, guid: cdb4d2bfb2bb7aa4c9153f8aba13307d, type: 3}
       propertyPath: m_Name
       value: PortBase01 Variant
