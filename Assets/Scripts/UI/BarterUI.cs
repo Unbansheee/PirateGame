@@ -10,10 +10,6 @@ public class BarterUI : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
     [SerializeField]
-    private TextMeshProUGUI PortName;
-    [SerializeField]
-    private TextMeshProUGUI ShipName;
-    [SerializeField]
     private TextMeshProUGUI PortCoins;
     [SerializeField]
     private TextMeshProUGUI ShipCoins;
@@ -42,8 +38,6 @@ public class BarterUI : MonoBehaviour
         //canvas.enabled = true;
         gameObject.SetActive(true);
         barter = new Barter(port.GetInventory(), ship.GetInventory());
-        PortName.SetText(port.GetName());
-        ShipName.SetText(ship.GetName());
         PortCoins.SetText("" + port.GetInventory().GetCoins());
         ShipCoins.SetText("" + ship.GetInventory().GetCoins());
         CoinsCount.SetText("0");
