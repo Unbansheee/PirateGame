@@ -210,6 +210,7 @@ public class ShipControls : MonoBehaviour
     private void ReloadCannon()
     {
         canFire = true;
+        GetComponent<AudioSource>().Play();
     }
 
 }

@@ -31,6 +31,9 @@ public class Cannon : MonoBehaviour
         ball.GetComponent<Rigidbody2D>().AddForce(transform.up * 50, ForceMode2D.Impulse);
         ball.GetComponent<CannonBall>().owner = transform.parent.parent.gameObject;
 
-
+        AudioSource audio = GetComponent<AudioSource>();
+        //randomize audio pitch
+        audio.pitch = Random.Range(0.9f, 1.1f);
+        audio.Play();
     }
 }
