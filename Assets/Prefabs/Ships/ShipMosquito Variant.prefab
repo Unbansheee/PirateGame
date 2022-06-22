@@ -588,6 +588,7 @@ Transform:
   m_Father: {fileID: 842499195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &2373678369610935985
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +673,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+
 --- !u!1001 &1483572541433461109
 PrefabInstance:
   m_ObjectHideFlags: 0

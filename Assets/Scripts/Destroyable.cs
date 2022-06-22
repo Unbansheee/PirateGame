@@ -2,7 +2,7 @@ namespace DefaultNamespace
 {
     public interface IDamageable
     {
-        public void Destroy();
+        public void DestroyObject();
         public void DamageReceived(float damage);
     }
 }

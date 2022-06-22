@@ -19,14 +19,14 @@ public class KeyValuePair {
 public class ShipControls : MonoBehaviour
 {
 
-    [SerializeField] private float rotationSpeed = 50.0f;
+    [SerializeField] private float rotationSpeed = 200.0f;
 
     [SerializeField]
     private SpriteRenderer spritewings;
 
     public new Camera camera;
     public Vector3 mousePosRelative;
-
+    public bool lockDirectionOnAim;
     public float speed;
     [SerializeField]
     private float rotationAmount;
@@ -95,11 +95,18 @@ public class ShipControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(1))
+        if (lockDirectionOnAim)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                UpdateMouseDirection();
+            }
+        }
+        else
         {
             UpdateMouseDirection();
         }
+        
 
         directionIndicator.SetActive(Input.GetMouseButton(1));
         switch (_mouseDirection)
@@ -144,7 +151,7 @@ public class ShipControls : MonoBehaviour
 
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
-            rotationAmount = rotationAmount / 1.04f;
+            rotationAmount = rotationAmount - (rotationAmount / 0.5f) * Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.W))

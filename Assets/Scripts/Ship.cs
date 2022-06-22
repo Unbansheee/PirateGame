@@ -20,6 +20,8 @@ public class Ship : MonoBehaviour, IDamageable
     private string shipName;
     [SerializeField]
     private Faction faction;
+    [SerializeField]
+    private GameObject shipwreck;
 
     private HealthComponent healthC;
     public TradingPort CurrentPort { get; set; } = null;
@@ -32,6 +34,15 @@ public class Ship : MonoBehaviour, IDamageable
         //temp
         inventory.AddMissingItems();
         inventory.RandomizePort();
+
+
+        if (faction == Faction.PLAYER && !PersistentData.FirstLoad)
+        {
+            healthC.SetHealth(PersistentData.Health);
+            inventory.SetCoins(PersistentData.Coins);
+            PersistentData.FirstLoad = false;
+        }
+
     }
 
     private void Awake()
@@ -48,10 +59,11 @@ public class Ship : MonoBehaviour, IDamageable
     {
         return shipName;
     }
-
     
-    public void Destroy()
+    public void DestroyObject()
     {
+        var wreck = Instantiate(shipwreck, transform.position, transform.rotation).GetComponent<Shipwreck>();
+        wreck.Initialize(inventory);
         Destroy(gameObject);
     }
 

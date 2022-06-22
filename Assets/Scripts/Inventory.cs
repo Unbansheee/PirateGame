@@ -73,6 +73,7 @@ public class Inventory : MonoBehaviour
     public void SetCoins(int coins)
     {
         this.coins = Mathf.Min(coins, coinsMax);
+        if (gameObject.CompareTag("Player")) PersistentData.Coins = this.coins;
     }
 
     public int GetCoins()

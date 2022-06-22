@@ -30,7 +30,13 @@ public class LevelTarget : MonoBehaviour
         int index = 0;
         foreach (var point in GetComponent<PolygonCollider2D>().points)
         {
-            GetComponent<Light2D>().shapePath[index] = point;
+            if (index < GetComponent<Light2D>().shapePath.Length)
+            {
+                GetComponent<Light2D>().shapePath[index] = point;
+            }
+            
+            
+            
             index++;
         }
         RefreshLight = false;

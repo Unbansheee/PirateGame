@@ -31,7 +31,7 @@ public class CannonBall : MonoBehaviour
             
             if (col.gameObject.GetComponent<HealthComponent>().DoDamage(10))
             {
-                col.gameObject.GetComponent<IDamageable>().Destroy();
+                col.gameObject.GetComponent<IDamageable>().DestroyObject();
             }
             
         }
