@@ -32,6 +32,15 @@ public class Ship : MonoBehaviour, IDamageable
         //temp
         inventory.AddMissingItems();
         inventory.RandomizePort();
+
+
+        if (faction == Faction.PLAYER && !PersistentData.FirstLoad)
+        {
+            healthC.SetHealth(PersistentData.Health);
+            inventory.SetCoins(PersistentData.Coins);
+            PersistentData.FirstLoad = false;
+        }
+
     }
 
     private void Awake()

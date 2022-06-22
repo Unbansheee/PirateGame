@@ -10522,6 +10522,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4351570070835550883, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: faction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4518510421748623721, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9991902
@@ -10612,11 +10616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7435755479293753831, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.8462492
+      value: -0.84624827
       objectReference: {fileID: 0}
     - target: {fileID: 7435755479293753831, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 1.6437513
+      value: 1.6437522
       objectReference: {fileID: 0}
     - target: {fileID: 7720653290198397192, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Layer
