@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class HealthComponent : MonoBehaviour
     private float health;
     [SerializeField]
     private float maxHealth;
+
+    public UnityEvent OnDamage;
+    public UnityEvent OnDeath;
 
     public bool DoDamage(float damage) // Returns true if health is 0
     {
@@ -19,10 +23,15 @@ public class HealthComponent : MonoBehaviour
         if (gameObject.GetComponent<IDamageable>() != null)
         {
             gameObject.GetComponent<IDamageable>().DamageReceived(damage);
+            OnDamage.Invoke();
         }
         
-        
-        return health <= 0;
+        if (health <= 0)
+        {
+            OnDeath.Invoke();
+            return true;
+        }
+        return false;
         
         
     }
@@ -53,6 +62,10 @@ public class HealthComponent : MonoBehaviour
     public void SetHealth(float val)
     {
         health = val;
+        if (health <= 0)
+        {
+            OnDeath.Invoke();
+        }
     }
 
     public void SetMaxHealth(float newMax)
