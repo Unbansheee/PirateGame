@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Tymski;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class LevelTarget : MonoBehaviour
 {
     public int Cost;
     public bool RefreshLight = false;
-    public SceneAsset NextScene;
+    public SceneReference NextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +58,7 @@ public class LevelTarget : MonoBehaviour
                 //copy player inventory to persistent data
                 PersistentData._Inventory = new List<ItemEntry>(GameManager.Player.GetInventory().items);
                 SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-                SceneManager.LoadScene(NextScene.name);
+                SceneManager.LoadScene(NextScene);
 
                 
             }
