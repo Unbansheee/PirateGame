@@ -1521,7 +1521,7 @@ MonoBehaviour:
   Ship_Gear_Full: {fileID: 2685755398524484313}
   Ship_Gear_Full_2: {fileID: 2685755399424314178}
   Ship_Gear_Full_3: {fileID: 2685755399667069125}
-  Ship_Gear_Reverse_Full: {fileID: 0}
+  Ship_Gear_Reverse_Full: {fileID: 3371858556724035603}
   message: {fileID: 8370234617600514155}
 --- !u!1 &7367626585105730927
 GameObject:
