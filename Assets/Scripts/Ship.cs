@@ -36,7 +36,8 @@ public class Ship : MonoBehaviour, IDamageable
         inventory.AddMissingItems();
         inventory.RandomizePort();
         
-        healthC.OnDeath.AddListener(Restart);
+        if (CompareTag("Player")) healthC.OnDeath.AddListener(Restart);
+        
 
         if (PersistentData.Coins != -1 && PersistentData.Health != -1f && PersistentData._Inventory != null)
         {
