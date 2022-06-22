@@ -25,7 +25,6 @@ public class Shipwreck : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("wreck");
         if (collision.CompareTag("Player"))
         {
             Inventory playerInventory = collision.GetComponent<Inventory>();

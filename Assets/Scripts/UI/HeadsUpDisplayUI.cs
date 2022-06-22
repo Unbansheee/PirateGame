@@ -20,10 +20,11 @@ public class HeadsUpDisplayUI : MonoBehaviour
     public GameObject Health_100;
     public TMPro.TextMeshProUGUI message;
     public TMPro.TextMeshProUGUI messageCost;
+    public RectTransform Compass_Stick;
 
     private ShipControls controller;
     private HealthComponent health;
-    
+    private Transform objective;
 
 
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
         controller = GameManager.Player.GetComponent<ShipControls>();
         health = GameManager.Player.GetComponent<HealthComponent>();
-
+        objective = GameManager.Objective;
     }
 
     // Update is called once per frame
@@ -122,10 +123,20 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
 
         //anim.SetBool("ShipDamage", true);
+
+        UpdateCompass();
     }
 
-    
-    
+    public void UpdateCompass()
+    {
+        if (objective && controller)
+        {
+            var dif = objective.position - controller.transform.position;
+            var degrees = Mathf.Atan2(dif.y, dif.x) * 180f / Mathf.PI;
+            Compass_Stick.rotation = Quaternion.Euler(0,0, degrees - 90f);
+        }
+    }
+
     public void ToggleMessage(bool active, string text = null)
     {
         if (text != null)
