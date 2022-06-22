@@ -176,7 +176,7 @@ public class ShipControls : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !ship.IsTrading)
         {
             GameManager.PauseMenu.Toggle();
         }
