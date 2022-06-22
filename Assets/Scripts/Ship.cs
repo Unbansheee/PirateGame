@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 enum Faction
 {
@@ -34,6 +35,8 @@ public class Ship : MonoBehaviour, IDamageable
         //temp
         inventory.AddMissingItems();
         inventory.RandomizePort();
+        
+        healthC.OnDeath.AddListener(Restart);
 
         if (PersistentData.Coins != -1 && PersistentData.Health != -1f && PersistentData._Inventory != null)
         {
@@ -112,6 +115,12 @@ public class Ship : MonoBehaviour, IDamageable
     {
         CurrentPort = null;
         healthC.HealOverTime = false;
+    }
+
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
 
