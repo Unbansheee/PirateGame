@@ -175,6 +175,10 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            if (target.gameObject.GetComponent<TradingPort>() != null)
+            {
+                target = waypoint;
+            }
             circleRadians = (circleRadians + rotationDirection * aStarAI.maxSpeed * Time.deltaTime * circleRadius / 180f * Mathf.PI) % (2 * Mathf.PI); 
             target.position = (circleRadius * new Vector3(Mathf.Cos(playerRadians), Mathf.Sin(playerRadians), 0f)) + player.transform.position;
             if (UnityEngine.Random.Range(0, 100) < 1)
@@ -202,10 +206,16 @@ public class EnemyAI : MonoBehaviour
                     break;
                 case ShipState.FLEEING:
                 case ShipState.ROAMING:
-                    TradingPort avoid = player ? player.GetComponent<Ship>().CurrentPort : null;
-                    if (!avoid)
+                    var avoid = player != null ? player.GetComponent<Ship>().CurrentPort : null;
+                    if (avoid != null)
+                    {
                         avoid = target.gameObject.GetComponent<TradingPort>();
-                    target = GameManager.RandomPort(avoid).transform;
+                        target = GameManager.RandomPort(avoid).transform;
+                    }
+                    else
+                    {
+                        target = GameManager.RandomPort().transform;
+                    }
                     break;
                 case ShipState.ADVANCING:
                     target = player.transform;
