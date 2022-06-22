@@ -28,17 +28,19 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     public static GameManager Instance;
-    private List<List<TradingPort>> ports;
+    //private List<List<TradingPort>> ports;
 
     void Awake()
     {
         Instance = this;
-        Instance.barterMenu = barterMenu;
-        Instance.gui = gui;
-        Instance.playerShip = playerShip;
         currrentLevel = Level.START;
-        Instance.ports = new();
-        Instance.ports.Add(LevelPorts01);
+        //ports = new();
+        //ports.Add(LevelPorts01);
+        //Instance.barterMenu = barterMenu;
+        //Instance.playerShip = playerShip;
+        //Instance.gui = gui;
+        //Instance.ports = new();
+        //Instance.ports.Add(LevelPorts01);
     }
 
     // Returns the barter menu instance
@@ -54,8 +56,8 @@ public class GameManager : MonoBehaviour
     private TradingPort RandomPortInLevel(TradingPort exclude = null, Level level = Level.NONE)
     {
         level = level == Level.NONE ? currrentLevel : level;
-        List<TradingPort> list = ports[(int)level - 1];
-        int number = list.Count;
+        //List<TradingPort> list = Level//ports[(int)level - 1];
+        int number = LevelPorts01.Count;
         if (number == 0 || (!exclude && number == 1))
         {
             return null;
@@ -63,11 +65,11 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             int index = (int)UnityEngine.Random.Range(0, number);
-            if (exclude && list[index] == exclude)
+            if (exclude && LevelPorts01[index] == exclude)
             {
                 continue;
             }
-            return list[index];
+            return LevelPorts01[index];
         }
     }
 
@@ -80,6 +82,6 @@ public class GameManager : MonoBehaviour
     // Returns list of ports in current level
     public static List<TradingPort> GetPortsInLevel()
     {
-        return Instance.ports[(int)Instance.currrentLevel - 1];
+        return Instance.LevelPorts01;
     }
 }
