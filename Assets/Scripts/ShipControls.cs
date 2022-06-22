@@ -159,6 +159,7 @@ public class ShipControls : MonoBehaviour
             _currentGear = math.clamp(_currentGear, -1, 3);
         }
 
+        // Enter & exit trade menu
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (ship.IsTrading)
@@ -200,7 +201,7 @@ public class ShipControls : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (canFire && Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
+        if (canFire && !ship.IsAtPort() && Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
         {
             foreach (var cannon in cannons)
             {

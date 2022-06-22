@@ -54,11 +54,6 @@ public class BarterUI : MonoBehaviour
 
     public void OnMenuUpdate()
     {
-        //int sum = 0;
-        //foreach (ItemEntryUI entry in itemBoxes)
-        //{
-        //    sum += entry.GetPriceDifference();
-        //}
         int sum = barter.CalculatePayment();
         ArrowLeft.enabled = sum < 0;
         ArrowRight.enabled = sum > 0;
