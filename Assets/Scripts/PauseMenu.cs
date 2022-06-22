@@ -9,6 +9,13 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject pauseMenu;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Resume();
+        }
+    }
     public void Pause()
     {
         pauseMenu.SetActive(true);
@@ -21,6 +28,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameManager.GUI.gameObject.SetActive(true);
+        Debug.Log("resuming");
     }
 
     public void Home(int sceneID)
