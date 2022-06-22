@@ -50,7 +50,7 @@ public class Ship : MonoBehaviour, IDamageable
     }
 
     
-    public void Destroy()
+    public void DestroyObject()
     {
         Destroy(gameObject);
     }
