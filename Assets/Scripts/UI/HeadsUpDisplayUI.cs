@@ -8,9 +8,21 @@ public class HeadsUpDisplayUI : MonoBehaviour
     public GameObject Ship_Gear_Full_2;
     public GameObject Ship_Gear_Full_3;
     public GameObject Ship_Gear_Reverse_Full;
+    public GameObject Health_10;
+    public GameObject Health_20;
+    public GameObject Health_30;
+    public GameObject Health_40;
+    public GameObject Health_50;
+    public GameObject Health_60;
+    public GameObject Health_70;
+    public GameObject Health_80;
+    public GameObject Health_90;
+    public GameObject Health_100;
     public TMPro.TextMeshProUGUI message;
 
     private ShipControls controller;
+    private HealthComponent health;
+    
 
 
     // Start is called before the first frame update
@@ -18,6 +30,7 @@ public class HeadsUpDisplayUI : MonoBehaviour
     {
 
         controller = GameManager.Player.GetComponent<ShipControls>();
+        health = GameManager.Player.GetComponent<HealthComponent>();
 
     }
 
@@ -51,7 +64,60 @@ public class HeadsUpDisplayUI : MonoBehaviour
                             break;
                     }
         }
-        
+        if (health != null)
+        {
+            Health_100.SetActive(false);
+            Health_90.SetActive(false);
+            Health_80.SetActive(false);
+            Health_70.SetActive(false);
+            Health_60.SetActive(false);
+            Health_50.SetActive(false);
+            Health_40.SetActive(false);
+            Health_30.SetActive(false);
+            Health_20.SetActive(false);
+            Health_10.SetActive(false);
+
+            if (health.GetHealthPercent() <= 0.1)
+            {
+                Health_10.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.2)
+            {
+                Health_20.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.3)
+            {
+                Health_30.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.4)
+            {
+                Health_40.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.5)
+            {
+                Health_50.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.6)
+            {
+                Health_60.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.7)
+            {
+                Health_70.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.8)
+            {
+                Health_80.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 0.9)
+            {
+                Health_90.SetActive(true);
+            }
+            else if (health.GetHealthPercent() <= 1)
+            {
+                Health_100.SetActive(true);
+            }
+        }
 
 
         //anim.SetBool("ShipDamage", true);
