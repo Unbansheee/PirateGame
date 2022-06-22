@@ -21,7 +21,6 @@ public class Cannon : MonoBehaviour
     {
         currentVelocity = (transform.position - prevPosition) / Time.deltaTime;
         prevPosition = transform.position;
-
     }
 
     public void Fire()

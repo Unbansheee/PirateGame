@@ -6,6 +6,7 @@ using System;
 
 public enum ShipState
 {
+    DEAD,
     STATIONARY,
     ROAMING,
     ADVANCING,
@@ -27,16 +28,18 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private List<Cannon> cannons;
 
+    private HealthComponent healthC;
     IAstarAI aStarAI;
     private Transform target;
-    private ShipState state = ShipState.ROAMING;
     private Ship player;
+    private ShipState state = ShipState.ROAMING;
     private float playerDistance = float.PositiveInfinity;
     private float playerRadians = 0f;
     private float circleRadians = 0f;
     private float rotationDirection = 0.75f;
     private bool canFire = true;
     private Vector3? positionCheck = null;
+    private bool isFleeing = false;
 
     private void Start()
     {
@@ -47,6 +50,9 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
+        healthC = GetComponent<HealthComponent>();
+        healthC.OnDeath.AddListener(OnDeath);
+        healthC.OnDamage.AddListener(OnDamage);
         aStarAI = GetComponent<IAstarAI>();
         if (aStarAI != null)
         {
@@ -130,9 +136,15 @@ public class EnemyAI : MonoBehaviour
 
     private void UpdateFleeing()
     {
-        if (!CanSeePlayer())
+        if (!isFleeing)
         {
-            SetState(ShipState.ROAMING);
+            isFleeing = true;
+            Invoke("EndFleeing", 10f);
+        }
+        else if (positionCheck == null)
+        {
+            positionCheck = transform.position;
+            Invoke("CheckIfStuckOrAtPort", 2f);
         }
     }
 
@@ -162,17 +174,17 @@ public class EnemyAI : MonoBehaviour
 
     public void SetState(ShipState state)
     {
-        Debug.Log(state);
+        //Debug.Log(state);
         switch (state)
         {
             case ShipState.STATIONARY:
                 target = waypoint;
                 break;
+            case ShipState.FLEEING:
             case ShipState.ROAMING:
                 target = GameManager.RandomPort().transform;
                 break;
             case ShipState.ADVANCING:
-            case ShipState.FLEEING:
                 target = player.transform;
                 break;
             case ShipState.CIRCLING:
@@ -221,6 +233,12 @@ public class EnemyAI : MonoBehaviour
         canFire = true;
     }
 
+    private void EndFleeing()
+    {
+        isFleeing = false;
+        SetState(ShipState.ROAMING);
+    }
+
     private void CheckIfStuckOrAtPort()
     {
         if (positionCheck != null && positionCheck == transform.position)
@@ -249,6 +267,21 @@ public class EnemyAI : MonoBehaviour
         else if (mousePosRelative.x > 0 && Mathf.Abs(mousePosRelative.y) < Mathf.Abs(mousePosRelative.x))
         {
             playerDirection = Direction.RIGHT;
+        }
+    }
+
+    void OnDeath()
+    {
+        healthC.OnDeath.RemoveListener(OnDeath);
+        healthC.OnDamage.RemoveListener(OnDamage);
+        SetState(ShipState.DEAD);
+    }
+
+    void OnDamage()
+    {
+        if (healthC.GetHealthPercent() <= 0.2f && UnityEngine.Random.Range(0,99) < 50)
+        {
+            SetState(ShipState.FLEEING);
         }
     }
 

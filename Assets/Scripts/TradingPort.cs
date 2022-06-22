@@ -27,7 +27,6 @@ public class TradingPort : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(textObject.text);
         textObject.text = portName;
 
         //temp
