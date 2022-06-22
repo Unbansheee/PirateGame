@@ -196,7 +196,10 @@ public class EnemyAI : MonoBehaviour
                 break;
             case ShipState.FLEEING:
             case ShipState.ROAMING:
-                target = GameManager.RandomPort().transform;
+                TradingPort avoid = player.GetComponent<Ship>().CurrentPort;
+                if (!avoid)
+                    avoid = target.gameObject.GetComponent<TradingPort>();
+                target = GameManager.RandomPort(avoid).transform;
                 break;
             case ShipState.ADVANCING:
                 target = player.transform;

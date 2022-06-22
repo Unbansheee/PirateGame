@@ -22,7 +22,7 @@ public class Ship : MonoBehaviour, IDamageable
     private Faction faction;
 
     private HealthComponent healthC;
-    private TradingPort currentPort = null;
+    public TradingPort CurrentPort { get; set; } = null;
 
     public bool IsTrading { get; set; } = false;
 
@@ -62,32 +62,32 @@ public class Ship : MonoBehaviour, IDamageable
 
     public bool IsAtPort()
     {
-        return currentPort != null;
+        return CurrentPort != null;
     }
 
     public void StartBartering()
     {
         if (IsAtPort())
         {
-            IsTrading = currentPort.StartTrade(this);
+            IsTrading = CurrentPort.StartTrade(this);
         }
     }
 
     public void EndBartering()
     {
-        currentPort.EndTrade();
+        CurrentPort.EndTrade();
         IsTrading = false;
     }
 
     public void OnEnterPort(TradingPort port)
     {
         healthC.HealOverTime = true;
-        this.currentPort = port;
+        this.CurrentPort = port;
     }
 
     public void OnLeavePort()
     {
-        currentPort = null;
+        CurrentPort = null;
         healthC.HealOverTime = false;
     }
 }
