@@ -176,6 +176,11 @@ public class ShipControls : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.PauseMenu.Toggle();
+        }
+
         //Accelerate or decelerate parabolically to meet target speed
         if (speed < gearSpeeds[_currentGear])
         {
