@@ -19,7 +19,7 @@ public class KeyValuePair {
 public class ShipControls : MonoBehaviour
 {
 
-    [SerializeField] private float rotationSpeed = 50.0f;
+    [SerializeField] private float rotationSpeed = 200.0f;
 
     [SerializeField]
     private SpriteRenderer spritewings;
@@ -144,7 +144,7 @@ public class ShipControls : MonoBehaviour
 
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
-            rotationAmount = rotationAmount / 1.04f;
+            rotationAmount = rotationAmount - (rotationAmount / 0.5f) * Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.W))

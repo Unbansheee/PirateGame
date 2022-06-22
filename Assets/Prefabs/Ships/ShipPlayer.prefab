@@ -10711,6 +10711,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7756950953993328575, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756950953993328575, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: cannons.Array.size
       value: 7
       objectReference: {fileID: 0}
