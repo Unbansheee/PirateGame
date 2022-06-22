@@ -5,7 +5,7 @@ using System.Linq;
 
 
 [System.Serializable]
-class ItemEntry
+public class ItemEntry
 {
     [HideInInspector]
     public const int countMax = 100;
@@ -34,7 +34,7 @@ public class Inventory : MonoBehaviour
     private int coins = 0;
 
     [SerializeField]
-    private List<ItemEntry> items;
+    public List<ItemEntry> items;
 
     private void Awake()
     {
@@ -73,7 +73,6 @@ public class Inventory : MonoBehaviour
     public void SetCoins(int coins)
     {
         this.coins = Mathf.Min(coins, coinsMax);
-        if (gameObject.CompareTag("Player")) PersistentData.Coins = this.coins;
     }
 
     public int GetCoins()

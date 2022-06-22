@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 enum Faction
 {
@@ -34,17 +35,31 @@ public class Ship : MonoBehaviour, IDamageable
         //temp
         inventory.AddMissingItems();
         inventory.RandomizePort();
+        
+        if (CompareTag("Player")) healthC.OnDeath.AddListener(Restart);
+        
 
-
-        if (faction == Faction.PLAYER && !PersistentData.FirstLoad)
+        if (PersistentData.Coins != -1 && PersistentData.Health != -1f && PersistentData._Inventory != null)
         {
-            healthC.SetHealth(PersistentData.Health);
+
+            inventory.items = new List<ItemEntry>(PersistentData._Inventory);
             inventory.SetCoins(PersistentData.Coins);
-            PersistentData.FirstLoad = false;
+            healthC.SetHealth(PersistentData.Health);
+            
         }
-
+        // if (faction == Faction.PLAYER && !PersistentData.FirstLoad)
+        // {
+        //     healthC.SetHealth(PersistentData.Health);
+        //     inventory.SetCoins(PersistentData.Coins);
+        //     PersistentData.FirstLoad = false;
+        // }
+        
+        //find gameobject by name
+        
+        
+        
     }
-
+    
     private void Awake()
     {
         inventory = GetComponent<Inventory>();
@@ -101,6 +116,12 @@ public class Ship : MonoBehaviour, IDamageable
     {
         CurrentPort = null;
         healthC.HealOverTime = false;
+    }
+
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
 

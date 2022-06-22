@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public static class PersistentData
 {
-    public static bool FirstLoad = true;
-    public static int Coins;
-    public static float Health;
+    public static int Coins = -1;
+    public static float Health = -1;
+    public static List<ItemEntry> _Inventory = null;
+
+
 }

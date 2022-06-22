@@ -118,7 +118,7 @@ public class ShipControls : MonoBehaviour
             }
             case Direction.BACK:
             {
-                directionIndicator.transform.localRotation = Quaternion.Euler(0, 0, 180);
+                //directionIndicator.transform.localRotation = Quaternion.Euler(0, 0, 180);
                 break;
             }
             case Direction.LEFT:
@@ -136,17 +136,13 @@ public class ShipControls : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
             rotationAmount = rotationAmount + rotationSpeed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            //rotate the object counterclockwise
+            //rotate the object clockwise
             rotationAmount = rotationAmount + -rotationSpeed * Time.deltaTime;
-            
-            
-            //transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
 
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
@@ -222,6 +218,25 @@ public class ShipControls : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Islands"))
+        {
+            float hitAngle = Vector2.Dot(gameObject.transform.up * -1, collision.GetContact(0).normal);
+            print(hitAngle);
+            if (hitAngle > 0.8f)
+            {
+                if (speed > 5)
+                {
+                    float dmg = 10;
+                    dmg = dmg * hitAngle;
+                    GetComponent<HealthComponent>().DoDamage(dmg);
+                }
+                _currentGear = 0;
+                speed = 0;
+            }
+        }
+    }
 
     public int getGear()
     {
