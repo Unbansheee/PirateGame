@@ -1669,6 +1669,8 @@ MonoBehaviour:
   Health_90: {fileID: 8563075793804281329}
   Health_100: {fileID: 8099583705111598878}
   message: {fileID: 8370234617600514155}
+  messageCost: {fileID: 3396192779247988501}
+  Compass_Stick: {fileID: 2685755399314314087}
 --- !u!1 &7367626585105730927
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,9 +23,11 @@ public class GameManager : MonoBehaviour
     private PauseMenu pauseMenu;
     [SerializeField]
     private List<TradingPort> LevelPorts01;
+    [SerializeField]
+    private Transform objective;
 
     public LevelTarget end;
-    
+
     private Level currrentLevel;
 
     // Start is called before the first frame update
@@ -54,6 +56,8 @@ public class GameManager : MonoBehaviour
     public static HeadsUpDisplayUI GUI { get { return Instance.gui; } }
 
     public static PauseMenu PauseMenu { get { return Instance.pauseMenu; } }
+
+    public static Transform Objective { get { return Instance.objective; } }
 
     // Returns a random port in the current level excluding the passed port
     // If there are no remaining ports to choose from returns null
