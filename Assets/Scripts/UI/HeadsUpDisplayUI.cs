@@ -8,14 +8,20 @@ public class HeadsUpDisplayUI : MonoBehaviour
     public GameObject Ship_Gear_Full_2;
     public GameObject Ship_Gear_Full_3;
     public GameObject Ship_Gear_Reverse_Full;
-    public TMPro.TextMeshProUGUI message;
+    //public TMPro.TextMeshProUGUI message;
+
+    [SerializeField]
+
+
     private ShipControls controller;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        controller = GameManager.Player.GetComponent<ShipControls>();
+
+        //controller = GameManager.Player.GetComponent<ShipControls>();
+
     }
 
     // Update is called once per frame
@@ -50,12 +56,13 @@ public class HeadsUpDisplayUI : MonoBehaviour
         //anim.SetBool("ShipDamage", true);
     }
 
-    public void ToggleMessage(bool active, string text = null)
-    {
-        if (text != null)
-        {
-            message.SetText(text);
-        }
-        message.gameObject.SetActive(active);
-    }
+    //public void ToggleMessage(bool active, string text = null)
+    //{
+        //if (text != null)
+        //{
+            //message.SetText(text);
+        //}
+        //message.gameObject.SetActive(active);
+    //}
+
 }
