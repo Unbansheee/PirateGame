@@ -142,6 +142,11 @@ public class EnemyAI : MonoBehaviour
         {
             SetState(ShipState.CIRCLING);
         }
+        else if (UnityEngine.Random.Range(0, 100) < 1)
+        {
+            UpdateCannonDirection();
+            SetState(ShipState.ATTACKING);
+        }
     }
 
     private void UpdateFleeing()
