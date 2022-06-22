@@ -38,8 +38,11 @@ public class TradingPort : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+
+            GameManager.GUI.ToggleMessage(true, "Press 'T' to Trade");
             portEntered = true;
-            GameManager.BarterMenu.Initialize(this, collision.GetComponent<Ship>());
+            //GameManager.BarterMenu.Initialize(this, collision.GetComponent<Ship>());
+            collision.GetComponent<Ship>().OnEnterPort(this);
         }
     }
 
@@ -47,8 +50,10 @@ public class TradingPort : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            GameManager.GUI.ToggleMessage(false);
             portEntered = true;
-            GameManager.BarterMenu.gameObject.SetActive(false);
+            EndTrade();
+            collision.GetComponent<Ship>().OnLeavePort();
         }
     }
     
@@ -65,6 +70,27 @@ public class TradingPort : MonoBehaviour
     public string GetName()
     {
         return portName;
+    }
+
+    // Returns true if 
+    public bool StartTrade(Ship ship)
+    {
+        if (ship)
+        {
+            GameManager.GUI.gameObject.SetActive(false);
+            GameManager.BarterMenu.Initialize(this, ship);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void EndTrade()
+    {
+        GameManager.BarterMenu.gameObject.SetActive(false);
+        GameManager.GUI.gameObject.SetActive(true);
     }
 
 }

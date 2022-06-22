@@ -11,8 +11,13 @@ public class HealthComponent : MonoBehaviour
     [SerializeField]
     private float maxHealth;
 
+    [HideInInspector]
     public UnityEvent OnDamage;
+    [HideInInspector]
     public UnityEvent OnDeath;
+
+
+    public bool HealOverTime { get; set; }
 
     public bool DoDamage(float damage) // Returns true if health is 0
     {
@@ -101,6 +106,9 @@ public class HealthComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (HealOverTime)
+        {
+            Heal(10f * Time.deltaTime);
+        }
     }
 }
