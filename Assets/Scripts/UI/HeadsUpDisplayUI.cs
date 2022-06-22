@@ -19,6 +19,7 @@ public class HeadsUpDisplayUI : MonoBehaviour
     public GameObject Health_90;
     public GameObject Health_100;
     public TMPro.TextMeshProUGUI message;
+    public TMPro.TextMeshProUGUI messageCost;
 
     private ShipControls controller;
     private HealthComponent health;
@@ -31,6 +32,7 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
         controller = GameManager.Player.GetComponent<ShipControls>();
         health = GameManager.Player.GetComponent<HealthComponent>();
+        
 
     }
 
@@ -132,6 +134,13 @@ public class HeadsUpDisplayUI : MonoBehaviour
             message.SetText(text);
         }
         message.gameObject.SetActive(active);
+    }
+    
+    public void ToggleMessageCost(bool active)
+    {
+
+        messageCost.SetText("You need " + GameManager.Instance.end.Cost + " coins to continue");
+        messageCost.gameObject.SetActive(active);
     }
 
 }

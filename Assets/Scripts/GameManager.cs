@@ -22,10 +22,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<TradingPort> LevelPorts01;
 
+    public LevelTarget end;
+    
     private Level currrentLevel;
 
     // Start is called before the first frame update
-    static GameManager Instance;
+    public static GameManager Instance;
     private List<List<TradingPort>> ports;
 
     void Awake()

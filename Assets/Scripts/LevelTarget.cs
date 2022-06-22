@@ -61,6 +61,18 @@ public class LevelTarget : MonoBehaviour
 
                 
             }
+            else
+            {
+                GameManager.GUI.ToggleMessageCost(true);
+            }
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.GUI.ToggleMessageCost(false);
         }
     }
     
