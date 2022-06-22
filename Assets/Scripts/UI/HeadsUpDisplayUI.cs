@@ -32,7 +32,6 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
         controller = GameManager.Player.GetComponent<ShipControls>();
         health = GameManager.Player.GetComponent<HealthComponent>();
-        
 
     }
 

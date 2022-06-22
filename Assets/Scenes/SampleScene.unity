@@ -17321,6 +17321,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1859905856017651117, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859905856758067020, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 219
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859905856854894015, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859905857022877617, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859905857458562100, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 219
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859905857684902898, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 144
+      objectReference: {fileID: 0}
     - target: {fileID: 2317360285838403760, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
       propertyPath: playerShip
       value: 
