@@ -228,7 +228,6 @@ public class ShipControls : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Islands"))
         {
             float hitAngle = Vector2.Dot(gameObject.transform.up * -1, collision.GetContact(0).normal);
-            print(hitAngle);
             if (hitAngle > 0.8f)
             {
                 if (speed > 5)
