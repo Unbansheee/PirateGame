@@ -33,6 +33,8 @@ public class Inventory : MonoBehaviour
     [Range(-1, coinsMax)]
     private int coins = 0;
 
+    public bool shouldRandomize = true;
+    
     [SerializeField]
     public List<ItemEntry> items;
 
@@ -140,16 +142,20 @@ public class Inventory : MonoBehaviour
     // Randomizes the item prices and counts in theh inventory
     public void RandomizePort()
     {
-        foreach (ItemEntry entry in items)
+        if (shouldRandomize)
         {
-            float priceRand = UnityEngine.Random.Range(0.75f, 1.25f);
-            int basePrice = Item.GetBasePrice(entry.type);
-            entry.price = Math.Min(ItemEntry.priceMax, (int)(basePrice * priceRand));
+            foreach (ItemEntry entry in items)
+            {
+                float priceRand = UnityEngine.Random.Range(0.75f, 1.25f);
+                int basePrice = Item.GetBasePrice(entry.type);
+                entry.price = Math.Min(ItemEntry.priceMax, (int)(basePrice * priceRand));
 
-            float countRand = UnityEngine.Random.Range(0.5f, 1.5f);
-            entry.count = (int)((ItemEntry.countMax - basePrice)/2 * countRand);
-            entry.count = Math.Min(ItemEntry.countMax, entry.count);
-        } 
+                float countRand = UnityEngine.Random.Range(0.5f, 1.5f);
+                entry.count = (int)((ItemEntry.countMax - basePrice)/2 * countRand);
+                entry.count = Math.Min(ItemEntry.countMax, entry.count);
+            } 
+        }
+        
     }
 
 }

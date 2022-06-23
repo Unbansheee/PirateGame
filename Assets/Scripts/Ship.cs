@@ -33,6 +33,7 @@ public class Ship : MonoBehaviour, IDamageable
     {
         healthC = GetComponent<HealthComponent>();
         //temp
+        
         inventory.AddMissingItems();
         inventory.RandomizePort();
         
