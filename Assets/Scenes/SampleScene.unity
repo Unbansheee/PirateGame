@@ -17321,6 +17321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1298198670649644277, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
+      propertyPath: ship
+      value: 
+      objectReference: {fileID: 611797416}
     - target: {fileID: 1859905856017651117, guid: bd8f671b2f9083748aefcfc55ad2d842, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 144
