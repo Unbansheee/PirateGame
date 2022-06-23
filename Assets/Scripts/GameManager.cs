@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,12 @@ public class GameManager : MonoBehaviour
 
     private Level currrentLevel;
 
+    private int finalBossCount = 0;
+
+    public UnityEvent BossDefeated;
+   
+    public static UnityEvent BossDefeatedEvent {get {return Instance.BossDefeated;} }
+
     // Start is called before the first frame update
     public static GameManager Instance;
     //private List<List<TradingPort>> ports;
@@ -38,13 +45,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         currrentLevel = Level.START;
-        //ports = new();
-        //ports.Add(LevelPorts01);
-        //Instance.barterMenu = barterMenu;
-        //Instance.playerShip = playerShip;
-        //Instance.gui = gui;
-        //Instance.ports = new();
-        //Instance.ports.Add(LevelPorts01);
     }
 
     // Returns the barter menu instance
@@ -92,4 +92,14 @@ public class GameManager : MonoBehaviour
     {
         return Instance.LevelPorts01;
     }
+
+    public static void UpdateFinalBossCount(int count)
+    {
+        Instance.finalBossCount += count;
+        if (Instance.finalBossCount == 0)
+        {
+            Instance.BossDefeated.Invoke();
+        }
+    }
+
 }
