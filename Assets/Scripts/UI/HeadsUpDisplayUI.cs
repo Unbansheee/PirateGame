@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HeadsUpDisplayUI : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class HeadsUpDisplayUI : MonoBehaviour
     private HealthComponent health;
     private Transform objective;
 
+    public Ship ship;
+
+    [SerializeField]
+    private TextMeshProUGUI ShipCoins;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +45,8 @@ public class HeadsUpDisplayUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ShipCoins.SetText("" + ship.GetInventory().GetCoins());
+
         if (controller != null)
         {
             switch (controller.getGear())
