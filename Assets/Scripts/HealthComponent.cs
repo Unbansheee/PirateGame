@@ -21,7 +21,10 @@ public class HealthComponent : MonoBehaviour
 
     public bool DoDamage(float damage) // Returns true if health is 0
     {
-        
+        if (health <= 0)
+        {
+            return true;
+        }
         health = health - damage;
         health = Mathf.Clamp(health, 0, maxHealth) ;
         //call DamageReceived on IDamageable interface
