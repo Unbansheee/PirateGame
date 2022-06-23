@@ -5,14 +5,22 @@ using UnityEngine;
 public class BossWinCondition : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    bool triggered = false;
+
     void Start()
     {
-        GetComponent<HealthComponent>().OnDeath.AddListener(OnPlayerVictory);
+        GetComponent<HealthComponent>().OnDeath.AddListener(OnEnemyKilled);
+        GameManager.UpdateFinalBossCount(1);
     }
 
-    public void OnPlayerVictory()
+    public void OnEnemyKilled()
     {
-        Debug.Log("Player wins!");
+        if (!triggered)
+        {
+            GameManager.UpdateFinalBossCount(-1);
+            triggered = true;
+        }
     }
-  
+
 }
