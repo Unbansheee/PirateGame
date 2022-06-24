@@ -6,6 +6,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.Rendering.Universal;
 
 
 [Serializable]
@@ -107,6 +108,7 @@ public class ShipControls : MonoBehaviour
         
 
         directionIndicator.SetActive(Input.GetMouseButton(1) && _mouseDirection != Direction.BACK);
+        directionIndicator.GetComponent<Light2D>().color = CanFire() ? Color.white : Color.grey;
         switch (_mouseDirection)
         {
             case Direction.FORWARD:
@@ -216,7 +218,7 @@ public class ShipControls : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (canFire && !ship.IsAtPort() && Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
+        if (CanFire() && Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
         {
             foreach (var cannon in cannons)
             {
@@ -259,6 +261,11 @@ public class ShipControls : MonoBehaviour
     {
         canFire = true;
         GetComponent<AudioSource>().Play();
+    }
+
+    private bool CanFire()
+    {
+        return canFire && !ship.IsAtPort() && _mouseDirection != Direction.BACK;
     }
 
 }
