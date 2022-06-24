@@ -27,7 +27,7 @@ public class ItemEntry
 public class Inventory : MonoBehaviour
 {
     [HideInInspector]
-    const int coinsMax = 1000;
+    const int coinsMax = 9999;
     
     [SerializeField]
     [Range(-1, coinsMax)]
