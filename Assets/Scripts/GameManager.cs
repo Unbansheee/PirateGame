@@ -64,7 +64,6 @@ public class GameManager : MonoBehaviour
     private TradingPort RandomPortInLevel(TradingPort exclude = null, Level level = Level.NONE)
     {
         level = level == Level.NONE ? currrentLevel : level;
-        //List<TradingPort> list = Level//ports[(int)level - 1];
         int number = LevelPorts01.Count;
         if (number == 0 || (!exclude && number == 1))
         {
