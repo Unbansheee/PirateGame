@@ -66,8 +66,8 @@ public class BarterUI : MonoBehaviour
 
     public void ExitTrade()
     {
-        //canvas.enabled = false;
         gameObject.SetActive(false);
+        GameManager.GUI.gameObject.SetActive(true);
         GameManager.Player.IsTrading = false;
     }
 
