@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField]
+    private bool bossEncounter = false;
+    [SerializeField]
     private bool respawn = true;
     [SerializeField]
     private float respawnDelay = 0f;
@@ -42,14 +44,26 @@ public class EnemyManager : MonoBehaviour
     void OnEnemyKilled()
     {
         --enemyCount;
-        if (respawn)
+        if (bossEncounter)
+        {
+            if (enemyCount == 0)
+            {
+                OnAllEnemiesDefeated.Invoke();
+                if (respawn)
+                {
+                    for (int i =0; i< enemies.Count; ++i)
+                    {
+                        Invoke("RespawnEnemy", respawnDelay);
+                        ++enemyCount;
+                    }
+                    bossEncounter = false;
+                }
+            }
+        }
+        else if (respawn)
         {
             ++enemyCount;
             Invoke("RespawnEnemy", respawnDelay);
-        }
-        else if (enemyCount == 0)
-        {
-            OnAllEnemiesDefeated.Invoke();
         }
     }
 

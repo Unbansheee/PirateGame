@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890b04192ddd0a4478c85c0f05dc81f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossEncounter: 0
   respawn: 1
   respawnDelay: 0
   enemyPrefab: {fileID: 6420399154004880150, guid: 90bd8be072f25934fa9c81fa0e7ca625, type: 3}
