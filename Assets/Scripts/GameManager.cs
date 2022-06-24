@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<TradingPort> LevelPorts01;
     [SerializeField]
-    private Transform objective;
+    public Transform objective;
 
     public LevelTarget end;
 
