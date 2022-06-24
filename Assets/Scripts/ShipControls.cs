@@ -106,7 +106,7 @@ public class ShipControls : MonoBehaviour
         }
         
 
-        directionIndicator.SetActive(Input.GetMouseButton(1));
+        directionIndicator.SetActive(Input.GetMouseButton(1) && _mouseDirection != Direction.BACK);
         switch (_mouseDirection)
         {
             case Direction.FORWARD:
