@@ -46,7 +46,7 @@ public class EnemyManager : MonoBehaviour
         if (respawn)
         {
             ++enemyCount;
-            Invoke("RespawnEnemy", enemyCount);
+            Invoke("RespawnEnemy", respawnDelay);
         }
         else if (enemyCount == 0)
         {
@@ -65,6 +65,10 @@ public class EnemyManager : MonoBehaviour
     Vector3 FindSpawnPointOutOfPlayerRange()
     {
         Vector3 spawnPoint = new Vector3();
+        if (!GameManager.Player)
+        {
+            return spawnPoint;
+        }
         float distance = 0f;
         foreach (Vector3 point in spawnPoints)
         {
