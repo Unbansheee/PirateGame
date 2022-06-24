@@ -63,7 +63,10 @@ public class EnemyAI : MonoBehaviour
 
     void OnDisable()
     {
-        if (aStarAI != null) aStarAI.onSearchPath -= Update;
+        if (aStarAI != null)
+        {
+            aStarAI.onSearchPath -= Update;
+        }
     }
 
     // Update is called once per frame
