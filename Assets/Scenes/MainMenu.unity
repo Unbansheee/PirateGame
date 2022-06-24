@@ -379,6 +379,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5324293277380932047, guid: 58ef715369cc5314da31ae1ff51fdd91, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324293277380932047, guid: 58ef715369cc5314da31ae1ff51fdd91, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324293277380932047, guid: 58ef715369cc5314da31ae1ff51fdd91, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324293277380932047, guid: 58ef715369cc5314da31ae1ff51fdd91, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5543376739912874264, guid: 58ef715369cc5314da31ae1ff51fdd91, type: 3}
       propertyPath: m_Name
       value: MainMenu
