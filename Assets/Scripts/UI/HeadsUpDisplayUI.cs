@@ -152,12 +152,5 @@ public class HeadsUpDisplayUI : MonoBehaviour
         }
         message.gameObject.SetActive(active);
     }
-    
-    public void ToggleMessageCost(bool active)
-    {
-
-        messageCost.SetText("You need " + GameManager.Instance.end.Cost + " coins to continue");
-        messageCost.gameObject.SetActive(active);
-    }
-
+   
 }
