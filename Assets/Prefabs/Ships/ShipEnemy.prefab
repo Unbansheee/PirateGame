@@ -413,6 +413,14 @@ PrefabInstance:
       propertyPath: faction
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4351570070835550883, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: shipName
+      value: Mosquito Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348772832350549456, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6545572007617190982, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Layer
       value: 2

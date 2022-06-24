@@ -144,6 +144,21 @@ public class Inventory : MonoBehaviour
     {
         if (shouldRandomize)
         {
+            if (GetComponent<EnemyAI>())
+            {
+                items[0].count += UnityEngine.Random.Range(1,4);
+                switch (items[0].count)
+                {
+                    case 2:
+                        items[1].count += 1;
+                        break;
+                    case 1:
+                        items[2].count += 1;
+                        break;
+                }
+                return;
+            }
+
             foreach (ItemEntry entry in items)
             {
                 float priceRand = UnityEngine.Random.Range(0.75f, 1.25f);
