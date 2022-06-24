@@ -24,11 +24,6 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        enemyCount = enemies.Count;
-        if (enemyCount > 0)
-        {
-            scale = enemies[0].transform.localScale;
-        }
         foreach (EnemyAI enemy in  enemies)
         {
             if (enemy)
@@ -37,6 +32,10 @@ public class EnemyManager : MonoBehaviour
                 enemy.GetComponent<HealthComponent>().OnDeath.AddListener(OnEnemyKilled);
                 ++enemyCount;
             }
+        }
+        if (enemyCount > 0)
+        {
+            scale = enemies[0].transform.localScale;
         }
     }
 
