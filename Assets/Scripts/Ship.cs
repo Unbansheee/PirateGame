@@ -109,14 +109,14 @@ public class Ship : MonoBehaviour, IDamageable
 
     public void OnEnterPort(TradingPort port)
     {
-        healthC.HealOverTime = true;
+        //healthC.HealOverTime = true;
         this.CurrentPort = port;
     }
 
     public void OnLeavePort()
     {
         CurrentPort = null;
-        healthC.HealOverTime = false;
+        //healthC.HealOverTime = false;
     }
 
     public void Restart()

@@ -5,9 +5,6 @@ using TMPro;
 
 public class TradingPort : MonoBehaviour
 {
-    private Inventory inventory;
-    private TMPro.TextMeshPro text;
-
     [SerializeField]
     private Canvas tradeWindow;
 
@@ -17,7 +14,11 @@ public class TradingPort : MonoBehaviour
     [SerializeField]
     private string portName;
 
+    private Inventory inventory;
+    private TMPro.TextMeshPro text;
     private bool portEntered = false;
+
+    public int HealingCost { get; set; } = 75;
 
     void Awake()
     {
@@ -38,10 +39,14 @@ public class TradingPort : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-
-            GameManager.GUI.ToggleMessage(true, "Press 'T' to Trade");
+            string message = "Press 'T' to Trade";
+            if (GameManager.Player.GetInventory().GetCoins() >= HealingCost 
+                    && !GameManager.Player.GetComponent<HealthComponent>().IsFullHealth())
+            {
+                message += "\nPress 'H' to pay " + HealingCost + " and restore all health";
+            }
+            GameManager.GUI.ToggleMessage(true, message);
             portEntered = true;
-            //GameManager.BarterMenu.Initialize(this, collision.GetComponent<Ship>());
             collision.GetComponent<Ship>().OnEnterPort(this);
         }
     }

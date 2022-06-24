@@ -17,7 +17,7 @@ public class HealthComponent : MonoBehaviour
     public UnityEvent OnDeath;
 
 
-    public bool HealOverTime { get; set; }
+    public bool HealOverTime { get; set; } = false;
 
     public bool DoDamage(float damage) // Returns true if health is 0
     {

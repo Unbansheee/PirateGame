@@ -19,38 +19,35 @@ public class KeyValuePair {
 public class ShipControls : MonoBehaviour
 {
 
-    [SerializeField] private float rotationSpeed = 200.0f;
+    [SerializeField]
+    private float rotationSpeed = 200.0f;
 
     [SerializeField]
     private SpriteRenderer spritewings;
+
+    [SerializeField]
+    private float rotationAmount;
+
+    [SerializeField]
+    private Direction _mouseDirection;
+
+    [SerializeField]
+    private float reloadTime = 1f;
 
     public new Camera camera;
     public Vector3 mousePosRelative;
     public bool lockDirectionOnAim;
     public float speed;
-    [SerializeField]
-    private float rotationAmount;
     public int _currentGear = 0;
     public List<KeyValuePair> gears = new List<KeyValuePair>();
-    private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
-
-    private Animator anim;
-    
-    [SerializeField]
-    private Direction _mouseDirection;
-    
     public List<Cannon> cannons;
     public GameObject directionIndicator;
 
-    private bool canFire = true;
-
-    [SerializeField]
-    private float reloadTime = 1f;
-
-    //[SerializeField] private Direction _mouseDirection;
-
+    private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
+    private Animator anim;
     private Ship ship;
-
+    private HealthComponent healthC;
+    private bool canFire = true;
 
     void UpdateMouseDirection()
     {
@@ -89,6 +86,7 @@ public class ShipControls : MonoBehaviour
     {
         anim = this.GetComponent<Animator>();
         ship = GetComponent<Ship>();
+        healthC = GetComponent<HealthComponent>();
     }
 
 
@@ -173,6 +171,15 @@ public class ShipControls : MonoBehaviour
             {
                 _currentGear = 0;
                 ship.StartBartering();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (ship.IsAtPort() && ship.GetInventory().GetCoins() >= ship.CurrentPort.HealingCost && !healthC.IsFullHealth())
+            {
+                ship.GetInventory().RemoveCoins(ship.CurrentPort.HealingCost);
+                healthC.SetHealth(healthC.GetMaxHealth());
             }
         }
 
