@@ -43,7 +43,7 @@ public class TradingPort : MonoBehaviour
             if (GameManager.Player.GetInventory().GetCoins() >= HealingCost 
                     && !GameManager.Player.GetComponent<HealthComponent>().IsFullHealth())
             {
-                message += "\nPress 'H' to pay " + HealingCost + " and restore all health";
+                message += "\nPress 'H' to pay " + HealingCost + " and repair all damage";
             }
             GameManager.GUI.ToggleMessage(true, message);
             portEntered = true;

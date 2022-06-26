@@ -64,7 +64,7 @@ public class LevelTarget : MonoBehaviour
             }
             else
             {
-                GameManager.GUI.ToggleMessage(true, "Pay the toll of " + GameManager.Instance.end.Cost + " coins to pass");
+                GameManager.GUI.ToggleMessage(true, "Pay the toll of " + GameManager.Instance.end.Cost + " coins to pass through the Wind Tunnel");
             }
         }
     }
