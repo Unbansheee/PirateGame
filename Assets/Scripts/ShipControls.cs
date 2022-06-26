@@ -242,7 +242,7 @@ public class ShipControls : MonoBehaviour
             float hitAngle = Vector2.Dot(gameObject.transform.up * -1, collision.GetContact(0).normal);
             if (hitAngle > 0.8f)
             {
-                if (speed > 5)
+                if (speed > 5 && !(CompareTag("Player") && ship.IsAtPort()))
                 {
                     float dmg = 10;
                     dmg = dmg * hitAngle;
