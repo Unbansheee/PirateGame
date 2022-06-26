@@ -178,9 +178,12 @@ public class ShipControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            if (ship.IsAtPort() && ship.GetInventory().GetCoins() >= ship.CurrentPort.HealingCost && !healthC.IsFullHealth())
+            int healingCost = ship.CurrentPort.HealingCost;
+            if (ship.IsAtPort() && ship.GetInventory().GetCoins() >= healingCost && !healthC.IsFullHealth())
             {
-                ship.GetInventory().RemoveCoins(ship.CurrentPort.HealingCost);
+                
+                ship.GetInventory().RemoveCoins(healingCost);
+                ship.CurrentPort.GetInventory().AddCoins(healingCost);
                 healthC.SetHealth(healthC.GetMaxHealth());
             }
         }
