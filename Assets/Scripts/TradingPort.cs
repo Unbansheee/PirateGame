@@ -16,7 +16,6 @@ public class TradingPort : MonoBehaviour
 
     private Inventory inventory;
     private TMPro.TextMeshPro text;
-    private bool portEntered = false;
 
     public int HealingCost { get; set; } = 75;
 
@@ -46,7 +45,6 @@ public class TradingPort : MonoBehaviour
                 message += "\nPress 'H' to pay " + HealingCost + " and repair all damage";
             }
             GameManager.GUI.ToggleMessage(true, message);
-            portEntered = true;
             collision.GetComponent<Ship>().OnEnterPort(this);
         }
     }
@@ -56,7 +54,6 @@ public class TradingPort : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GameManager.GUI.ToggleMessage(false);
-            portEntered = true;
             EndTrade();
             collision.GetComponent<Ship>().OnLeavePort();
         }
