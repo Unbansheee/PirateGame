@@ -413,10 +413,6 @@ PrefabInstance:
       propertyPath: faction
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4351570070835550883, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
-      propertyPath: shipName
-      value: Mosquito Ship
-      objectReference: {fileID: 0}
     - target: {fileID: 5348772832350549456, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -429,13 +425,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7086791593687637767, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7435755479293753831, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.84624827
+      value: -0.8462502
       objectReference: {fileID: 0}
     - target: {fileID: 7435755479293753831, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 1.6437522
+      value: 1.6437503
       objectReference: {fileID: 0}
     - target: {fileID: 7720653290198397192, guid: 95fccdbaa755449488b6073157c0a85a, type: 3}
       propertyPath: m_Layer

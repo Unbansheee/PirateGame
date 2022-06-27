@@ -55,10 +55,13 @@ public class HeadsUpDisplayUI : MonoBehaviour
                         case 0:
                             Ship_Gear_Full.SetActive(false);
                             Ship_Gear_Reverse_Full.SetActive(false);
+                            Ship_Gear_Full_2.SetActive(false);
+                            Ship_Gear_Full_3.SetActive(false);
                             break;
                         case 1:
                             Ship_Gear_Full.SetActive(true);
                             Ship_Gear_Full_2.SetActive(false);
+                            Ship_Gear_Full_3.SetActive(false);
                             break;
                         case 2:
                             Ship_Gear_Full_2.SetActive(true);
