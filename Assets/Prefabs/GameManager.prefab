@@ -145,6 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2317360285838403767}
   - component: {fileID: 2317360285838403760}
+  - component: {fileID: 6887639499818205894}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -189,6 +190,29 @@ MonoBehaviour:
   LevelPorts01: []
   objective: {fileID: 0}
   end: {fileID: 0}
+  BossDefeated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6887639499818205894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317360285838403761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890b04192ddd0a4478c85c0f05dc81f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEncounter: 0
+  respawn: 1
+  respawnDelay: 0
+  enemyPrefab: {fileID: 6420399154004880150, guid: 90bd8be072f25934fa9c81fa0e7ca625, type: 3}
+  enemies: []
+  OnAllEnemiesDefeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8744043675587858563
 GameObject:
   m_ObjectHideFlags: 0

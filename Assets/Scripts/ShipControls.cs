@@ -6,6 +6,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.Rendering.Universal;
 
 
 [Serializable]
@@ -19,38 +20,35 @@ public class KeyValuePair {
 public class ShipControls : MonoBehaviour
 {
 
-    [SerializeField] private float rotationSpeed = 200.0f;
+    [SerializeField]
+    private float rotationSpeed = 200.0f;
 
     [SerializeField]
     private SpriteRenderer spritewings;
+
+    [SerializeField]
+    private float rotationAmount;
+
+    [SerializeField]
+    private Direction _mouseDirection;
+
+    [SerializeField]
+    private float reloadTime = 1f;
 
     public new Camera camera;
     public Vector3 mousePosRelative;
     public bool lockDirectionOnAim;
     public float speed;
-    [SerializeField]
-    private float rotationAmount;
     public int _currentGear = 0;
     public List<KeyValuePair> gears = new List<KeyValuePair>();
-    private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
-
-    private Animator anim;
-    
-    [SerializeField]
-    private Direction _mouseDirection;
-    
     public List<Cannon> cannons;
     public GameObject directionIndicator;
 
-    private bool canFire = true;
-
-    [SerializeField]
-    private float reloadTime = 1f;
-
-    //[SerializeField] private Direction _mouseDirection;
-
+    private Dictionary<int, float> gearSpeeds = new Dictionary<int, float>();
+    private Animator anim;
     private Ship ship;
-
+    private HealthComponent healthC;
+    private bool canFire = true;
 
     void UpdateMouseDirection()
     {
@@ -89,6 +87,7 @@ public class ShipControls : MonoBehaviour
     {
         anim = this.GetComponent<Animator>();
         ship = GetComponent<Ship>();
+        healthC = GetComponent<HealthComponent>();
     }
 
 
@@ -108,7 +107,8 @@ public class ShipControls : MonoBehaviour
         }
         
 
-        directionIndicator.SetActive(Input.GetMouseButton(1));
+        directionIndicator.SetActive(Input.GetMouseButton(1) && _mouseDirection != Direction.BACK);
+        directionIndicator.GetComponent<Light2D>().color = CanFire() ? Color.white : Color.grey;
         switch (_mouseDirection)
         {
             case Direction.FORWARD:
@@ -176,6 +176,18 @@ public class ShipControls : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            int healingCost = ship.CurrentPort.HealingCost;
+            if (ship.IsAtPort() && ship.GetInventory().GetCoins() >= healingCost && !healthC.IsFullHealth())
+            {
+                
+                ship.GetInventory().RemoveCoins(healingCost);
+                ship.CurrentPort.GetInventory().AddCoins(healingCost);
+                healthC.SetHealth(healthC.GetMaxHealth());
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape) && !ship.IsTrading)
         {
             GameManager.PauseMenu.Toggle();
@@ -209,7 +221,7 @@ public class ShipControls : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (canFire && !ship.IsAtPort() && Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
+        if (CanFire() && Input.GetMouseButtonDown(0) && Input.GetMouseButton(1))
         {
             foreach (var cannon in cannons)
             {
@@ -230,7 +242,7 @@ public class ShipControls : MonoBehaviour
             float hitAngle = Vector2.Dot(gameObject.transform.up * -1, collision.GetContact(0).normal);
             if (hitAngle > 0.8f)
             {
-                if (speed > 5)
+                if (speed > 5 && !(CompareTag("Player") && ship.IsAtPort()))
                 {
                     float dmg = 10;
                     dmg = dmg * hitAngle;
@@ -252,6 +264,11 @@ public class ShipControls : MonoBehaviour
     {
         canFire = true;
         GetComponent<AudioSource>().Play();
+    }
+
+    private bool CanFire()
+    {
+        return canFire && !ship.IsAtPort() && _mouseDirection != Direction.BACK;
     }
 
 }

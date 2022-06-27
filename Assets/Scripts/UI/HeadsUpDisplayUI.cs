@@ -25,7 +25,6 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
     private ShipControls controller;
     private HealthComponent health;
-    private Transform objective;
 
     public Ship ship;
 
@@ -39,7 +38,6 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
         controller = GameManager.Player.GetComponent<ShipControls>();
         health = GameManager.Player.GetComponent<HealthComponent>();
-        objective = GameManager.Objective;
     }
 
     // Update is called once per frame
@@ -140,6 +138,7 @@ public class HeadsUpDisplayUI : MonoBehaviour
 
     public void UpdateCompass()
     {
+        Transform objective = GameManager.Objective;
         if (objective && controller)
         {
             var dif = objective.position - controller.transform.position;
@@ -156,12 +155,5 @@ public class HeadsUpDisplayUI : MonoBehaviour
         }
         message.gameObject.SetActive(active);
     }
-    
-    public void ToggleMessageCost(bool active)
-    {
-
-        messageCost.SetText("You need " + GameManager.Instance.end.Cost + " coins to continue");
-        messageCost.gameObject.SetActive(active);
-    }
-
+   
 }

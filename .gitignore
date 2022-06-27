@@ -1,4 +1,4 @@
-# This .gitignore file should be placed at the root of your Unity project directory
+b# This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
@@ -73,6 +73,7 @@ crashlytics-build.properties
 
 #custom
 *.psd
+*.psd.meta
 .idea/.idea.PirateGame/.idea/workspace.xml
 
 .idea/.idea.PirateGame/.idea/

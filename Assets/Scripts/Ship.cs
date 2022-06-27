@@ -25,22 +25,27 @@ public class Ship : MonoBehaviour, IDamageable
     private GameObject shipwreck;
 
     private HealthComponent healthC;
+    private Shipwreck wreckInstance = null;
     public TradingPort CurrentPort { get; set; } = null;
 
     public bool IsTrading { get; set; } = false;
 
+    private void Awake()
+    {
+        inventory = GetComponent<Inventory>();
+        healthC = GetComponent<HealthComponent>();
+    }
+
     private void Start()
     {
-        healthC = GetComponent<HealthComponent>();
-        //temp
-        
         inventory.AddMissingItems();
         inventory.RandomizePort();
         
-        if (CompareTag("Player")) healthC.OnDeath.AddListener(Restart);
-        
-
-        if (PersistentData.Coins != -1 && PersistentData.Health != -1f && PersistentData._Inventory != null)
+        if (CompareTag("Player")) 
+        {
+            healthC.OnDeath.AddListener(Restart);
+        }
+        if (CompareTag("Player") && PersistentData.Coins != -1 && PersistentData.Health != -1f && PersistentData._Inventory != null)
         {
 
             inventory.items = new List<ItemEntry>(PersistentData._Inventory);
@@ -60,11 +65,6 @@ public class Ship : MonoBehaviour, IDamageable
         
         
     }
-    
-    private void Awake()
-    {
-        inventory = GetComponent<Inventory>();
-    }
 
     public Inventory GetInventory()
     {
@@ -78,8 +78,12 @@ public class Ship : MonoBehaviour, IDamageable
     
     public void DestroyObject()
     {
-        var wreck = Instantiate(shipwreck, transform.position, transform.rotation).GetComponent<Shipwreck>();
-        wreck.Initialize(inventory);
+        if (wreckInstance)
+        {
+            return;
+        }
+        wreckInstance = Instantiate(shipwreck, transform.position, transform.rotation).GetComponent<Shipwreck>();
+        wreckInstance.Initialize(inventory);
         Destroy(gameObject);
     }
 
@@ -109,14 +113,14 @@ public class Ship : MonoBehaviour, IDamageable
 
     public void OnEnterPort(TradingPort port)
     {
-        healthC.HealOverTime = true;
+        //healthC.HealOverTime = true;
         this.CurrentPort = port;
     }
 
     public void OnLeavePort()
     {
         CurrentPort = null;
-        healthC.HealOverTime = false;
+        //healthC.HealOverTime = false;
     }
 
     public void Restart()

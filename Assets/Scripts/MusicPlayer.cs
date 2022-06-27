@@ -80,6 +80,7 @@ public class MusicPlayer : MonoBehaviour
         }
         musicState = MusicState.Stopped;
         audioSource.Stop();
+        PlayRandomSong();
         
     }
 

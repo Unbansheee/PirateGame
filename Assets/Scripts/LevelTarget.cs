@@ -64,7 +64,7 @@ public class LevelTarget : MonoBehaviour
             }
             else
             {
-                GameManager.GUI.ToggleMessageCost(true);
+                GameManager.GUI.ToggleMessage(true, "Pay the toll of " + GameManager.Instance.end.Cost + " coins to pass through the Wind Tunnel");
             }
         }
     }
@@ -73,7 +73,7 @@ public class LevelTarget : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.GUI.ToggleMessageCost(false);
+            GameManager.GUI.ToggleMessage(false);
         }
     }
     

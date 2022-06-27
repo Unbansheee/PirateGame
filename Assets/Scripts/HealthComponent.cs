@@ -17,11 +17,14 @@ public class HealthComponent : MonoBehaviour
     public UnityEvent OnDeath;
 
 
-    public bool HealOverTime { get; set; }
+    public bool HealOverTime { get; set; } = false;
 
     public bool DoDamage(float damage) // Returns true if health is 0
     {
-        
+        if (health <= 0)
+        {
+            return true;
+        }
         health = health - damage;
         health = Mathf.Clamp(health, 0, maxHealth) ;
         //call DamageReceived on IDamageable interface

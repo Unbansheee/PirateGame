@@ -5370,7 +5370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf52f94796100f74088ce99e3fb3381f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipName: Flying Harvestman
+  shipName: Ship
   faction: 0
   shipwreck: {fileID: 4694076247813468070, guid: 9ce5f2855f0eb9146b2c0ce976635b5a, type: 3}
 --- !u!114 &7756950953993328575
@@ -5389,6 +5389,7 @@ MonoBehaviour:
   spritewings: {fileID: 1817554797583447474}
   camera: {fileID: 0}
   mousePosRelative: {x: 0, y: 0, z: 0}
+  lockDirectionOnAim: 0
   speed: 0
   rotationAmount: 0
   _currentGear: 0
@@ -5420,6 +5421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+  shouldRandomize: 1
   items: []
 --- !u!50 &8394683394925348922
 Rigidbody2D:
