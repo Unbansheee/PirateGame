@@ -82,7 +82,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones:
-    - name: bone_2
+    - name: Wingbone
       guid: 40a3f7106672ab34a829788b6b3201f4
       position: {x: 392.5748, y: 510.27408, z: 0}
       rotation: {x: 0, y: 0, z: -0.26979318, w: 0.9629183}
