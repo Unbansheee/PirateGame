@@ -107,7 +107,10 @@ public class Ship : MonoBehaviour, IDamageable
 
     public void EndBartering()
     {
-        CurrentPort.EndTrade();
+        if (IsAtPort())
+        {
+            CurrentPort.EndTrade();
+        }
         IsTrading = false;
     }
 
